@@ -1,0 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5rem 0.75rem;
+  width: 100vw;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 8rem;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+nav button i {
+  border: 2px solid #014751;
+  color: #014751;
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+nav button:hover {
+  cursor: pointer;
+}
+
+/* Nav Menu Functionality */
+nav button.showMenu {
+  transform: rotate(-90deg);
+  transition: all 0.4s;
+}
+
+nav button.hideMenu {
+  transform: rotate(0deg);
+  transition: all 0.4s;
+}
+
+#nav-menu-items {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 9vh;
+  right: 0;
+  font-size: 0.75rem;
+  text-align: left;
+  background-color: #fff;
+  transform: translateX(25vw);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+#nav-menu-items a {
+  padding: 0.75rem;
+  color: #014751;
+  margin-bottom: 1px;
+  text-transform: uppercase;
+}
+
+#nav-menu-items a:hover {
+  background-color: #eee;
+}
+
+#nav-menu-items.showItems {
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0vw);
+  transition: all 0.6s;
+}
+
+#nav-menu-items.showItems a {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0;
+}
+
+#nav-menu-items.hideItems {
+  transform: translateX(25vw);
+  transition: all 0.6s;
+}
+
+/* Header */
+h1 {
+  margin-top: 10vh;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #014751;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Section */
+main {
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plan-type {
+  font-size: 1.25rem;
+  color: #014751;
+  padding: 1rem;
+  border-bottom: 2px solid #eee;
+}
+
+.plan-type.active {
+  border-bottom: 2px solid #014751;
+  transition: all 0.2s 0.2s;
+}
+
+.plan-type.inactive {
+  border-bottom: 2px solid #eee;
+  transition: all 0.2s;
+}
+
+/* Toggler */
+.subscriptions {
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.subscription-toggle {
+  display: flex;
+  border-radius: 2.5rem;
+  margin: 0 0.75rem;
+  background-color: #64db9b;
+}
+
+h3 {
+  color: #014751;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.toggle-overlay {
+  padding: 0.65rem;
+  margin: 0.2rem 1.75rem 0.2rem 0.2rem;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.toggle-overlay:hover {
+  cursor: pointer;
+}
+
+.toggle-overlay.left {
+  margin: 0.2rem 1.75rem 0.2rem 0.2rem;
+  transition: all 0.3s;
+}
+
+.toggle-overlay.right {
+  margin: 0.2rem 0.25rem 0.2rem 1.75rem;
+  transition: all 0.3s;
+}
