@@ -124,7 +124,7 @@ subscriptionToggler.addEventListener('click', function() {
 // Create Plan Cards
 
 const createCard = (cardInfo) => {
-    const {header, featured, description, monthly, annual, limit} = cardInfo;
+    const {header, featured, description, monthly, annual} = cardInfo;
 
     const planCard = document.createElement('div');
     planCard.classList.add('plan-card');
@@ -133,10 +133,13 @@ const createCard = (cardInfo) => {
     cardHeading.classList.add('card-heading');
     cardHeading.innerText = header;
 
+    let featuredBadge;
     if (featured === true) {
-        const featuredBadge = document.createElement('div');
+        planCard.classList.add('featured-card');
+        featuredBadge = document.createElement('span');
         featuredBadge.classList.add('featured-badge');
-        featuredBadge.innerHTML = `<p><i class="fas fa-star"></i> Recommended</p>`;
+        featuredBadge.innerHTML = `<i class="fas fa-star"></i> Recommended`;
+        cardHeading.append(featuredBadge);
     }
 
     const cardDescription = document.createElement('p');
@@ -145,8 +148,12 @@ const createCard = (cardInfo) => {
 
     const cardMonthlyPrice = document.createElement('h3');
     cardMonthlyPrice.classList.add('monthly-price');
-    cardMonthlyPrice.innerHTML = `<span>$${monthly}</span>/ per month`;
-
+    if (typeof monthly === 'number') {
+        cardMonthlyPrice.innerHTML = `<span>$${monthly}</span>/ per month`;
+    }   else {
+        cardMonthlyPrice.classList.add('custom-quote');
+        cardMonthlyPrice.innerHTML = monthly;
+    }
     const cardAnnualPrice = document.createElement('h3');
     cardAnnualPrice.classList.add('annual-price');
     cardAnnualPrice.innerHTML = `<span>$${annual}</span>/ per month`;
@@ -157,9 +164,30 @@ const createCard = (cardInfo) => {
 
     planCard.append(cardHeading, cardDescription, cardMonthlyPrice, freeTrialBtn);
 
+    addCardExtras(cardInfo, planCard);
+
     mainSection.append(planCard);
 
 };
+
+const addCardExtras = (cardInfo, target) => {
+    const extraBenefits = cardInfo.extras;
+    extraBenefits.forEach(extraBenefit => {
+        const benefit = document.createElement('h4');
+        benefit.classList.add('extra-benefit');
+        if (typeof extraBenefit.value === 'number' || typeof extraBenefit.value === 'string') {
+            benefit.innerHTML = `<span>${extraBenefit.description}</span> <span>${extraBenefit.value}</span>`; 
+        }   else if (extraBenefit.value === true) {
+            benefit.classList.add('included');
+            benefit.innerHTML = `<span>${extraBenefit.description}</span> <span><i class="fas fa-check-circle"></i></span>`;
+        }   else {
+            benefit.classList.add('notIncluded');
+            benefit.innerHTML = `<span>${extraBenefit.description}</span> <span><i class="fas fa-times-circle"></i></span>`;
+        }
+        target.append(benefit);
+    })
+    
+}
 
 planInfo.forEach(plan => {
     createCard(plan);

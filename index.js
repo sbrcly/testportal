@@ -67,13 +67,32 @@ const planInfo = [
         monthly: 23,
         annual: 249,
         limit: 30,
-        extras: {
-            advTest: true,
-            analytics: false,
-            certificates: false,
-            addAccounts: false,
-            customization: false
-        }
+        extras: [
+            {
+                description: 'Limit of results collected per month',
+                value: 30
+            },
+            {
+                description: 'Advanced test configuration',
+                value: true
+            },
+            {
+                description: 'Insightful analytics and reporting of results',
+                value: false
+            },
+            {
+                description: 'Certificates',
+                value: false
+            },
+            {
+                description: 'Additional user accounts and collaboration',
+                value: false
+            },
+            {
+                description: 'Cusomization & Premium support',
+                value: false
+            }
+        ]
     },
     {
         header: 'Pro',
@@ -82,13 +101,32 @@ const planInfo = [
         monthly: 49,
         annual: 529,
         limit: 500,
-        extras: {
-            advTest: true,
-            analytics: true,
-            certificates: false,
-            addAccounts: false,
-            customization: false
-        }
+        extras: [
+            {
+                description: 'Limit of results collected per month',
+                value: 500
+            },
+            {
+                description: 'Advanced test configuration',
+                value: true
+            },
+            {
+                description: 'Insightful analytics and reporting of results',
+                value: true
+            },
+            {
+                description: 'Certificates',
+                value: false
+            },
+            {
+                description: 'Additional user accounts and collaboration',
+                value: false
+            },
+            {
+                description: 'Cusomization & Premium support',
+                value: false
+            }
+        ]
     },
     {
         header: 'Max',
@@ -97,13 +135,32 @@ const planInfo = [
         monthly: 137,
         annual: 1399,
         limit: 'Unlimited',
-        extras: {
-            advTest: true,
-            analytics: true,
-            certificates: true,
-            addAccounts: false,
-            customization: false
-        }
+        extras: [
+            {
+                description: 'Limit of results collected per month',
+                value: 'Unlimited'
+            },
+            {
+                description: 'Advanced test configuration',
+                value: true
+            },
+            {
+                description: 'Insightful analytics and reporting of results',
+                value: true
+            },
+            {
+                description: 'Certificates',
+                value: true
+            },
+            {
+                description: 'Additional user accounts and collaboration',
+                value: false
+            },
+            {
+                description: 'Cusomization & Premium support',
+                value: false
+            }
+        ]
     },
     {
         header: 'Max Enterprise',
@@ -112,13 +169,32 @@ const planInfo = [
         monthly: 'Custom quote',
         annual: 'Custom quote',
         limit: 'Unlimited',
-        extras: {
-            advTest: true,
-            analytics: true,
-            certificates: true,
-            addAccounts: true,
-            customization: true
-        }
+        extras: [
+            {
+                description: 'Limit of results collected per month',
+                value: 'Unlimited'
+            },
+            {
+                description: 'Advanced test configuration',
+                value: true
+            },
+            {
+                description: 'Insightful analytics and reporting of results',
+                value: true
+            },
+            {
+                description: 'Certificates',
+                value: true
+            },
+            {
+                description: 'Additional user accounts and collaboration',
+                value: true
+            },
+            {
+                description: 'Cusomization & Premium support',
+                value: true
+            }
+        ]
     }
 ]
 const subscriptionTypes = ['Monthly', 'Annually'];
