@@ -62,7 +62,7 @@ const planTypes = [
 const planInfo = [
     {
         header: 'Standard',
-        featured: false,
+        recommended: false,
         description: 'Ideal for low-volume testing where no advanced results analytics is needed',
         monthly: 23,
         annual: 249,
@@ -96,7 +96,7 @@ const planInfo = [
     },
     {
         header: 'Pro',
-        featured: true,
+        recommended: true,
         description: 'Fits to most use cases with limited results collected per month',
         monthly: 49,
         annual: 529,
@@ -130,7 +130,7 @@ const planInfo = [
     },
     {
         header: 'Max',
-        featured: false,
+        recommended: false,
         description: 'Unlimited features and no limit of results collected per month',
         monthly: 137,
         annual: 1399,
@@ -164,7 +164,7 @@ const planInfo = [
     },
     {
         header: 'Max Enterprise',
-        featured: false,
+        recommended: false,
         description: 'Collaboration and additional user accounts, unlimited features and results collected, customization',
         monthly: 'Custom quote',
         annual: 'Custom quote',

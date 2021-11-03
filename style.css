@@ -255,8 +255,11 @@ p {
 	box-shadow: 0 0 2px rgba(100, 100, 100, 0.5);
 }
 
-.featured-card {
+.recommended-card {
 	background-color: #ffeeb4;
+}
+
+.monthly {
 }
 
 .plan-card * {
@@ -270,7 +273,7 @@ p {
 	align-items: center;
 }
 
-.featured-badge {
+.recommended-badge {
 	font-size: 0.8rem;
 	padding: 0 0.5rem;
 	background-color: #fff;
@@ -284,13 +287,28 @@ p {
 	padding-right: 1rem;
 }
 
-.monthly-price {
+.monthly-price,
+.annual-price {
 	font-weight: 100;
 }
 
-.monthly-price span {
+.monthly-price span,
+.annual-price span {
 	font-size: 3rem;
 	font-weight: 700;
+}
+
+.monthly-price.active,
+.annual-price.active {
+	display: block;
+	opacity: 1;
+	transition: all 1s;
+}
+
+.monthly-price.inactive,
+.annual-price.inactive {
+	position: absolute;
+	opacity: 0;
 }
 
 .custom-quote {
@@ -342,12 +360,12 @@ p {
 	background-color: #014751;
 }
 
-.featured-card .extra-benefit.included i {
+.recommended-card .extra-benefit.included i {
 	color: #fff;
 	background-color: #014751;
 }
 
-.featured-card .extra-benefit.notIncluded i {
+.recommended-card .extra-benefit.notIncluded i {
 	color: rgba(238, 238, 238, 0.705);
 	background-color: #01465194;
 }

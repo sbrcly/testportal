@@ -118,28 +118,30 @@ planTypeBtns.forEach(button => {
 subscriptionToggler.addEventListener('click', function() {
     this.classList.toggle('left');
     this.classList.toggle('right');
+    pricingMode();
 });
 
 
 // Create Plan Cards
 
 const createCard = (cardInfo) => {
-    const {header, featured, description, monthly, annual} = cardInfo;
+    const {header, recommended, description, monthly, annual} = cardInfo;
 
     const planCard = document.createElement('div');
     planCard.classList.add('plan-card');
+    planCard.classList.add('monthly');
 
     const cardHeading = document.createElement('h2');
     cardHeading.classList.add('card-heading');
     cardHeading.innerText = header;
 
-    let featuredBadge;
-    if (featured === true) {
-        planCard.classList.add('featured-card');
-        featuredBadge = document.createElement('span');
-        featuredBadge.classList.add('featured-badge');
-        featuredBadge.innerHTML = `<i class="fas fa-star"></i> Recommended`;
-        cardHeading.append(featuredBadge);
+    let recommendedBadge;
+    if (recommended === true) {
+        planCard.classList.add('recommended-card');
+        recommendedBadge = document.createElement('span');
+        recommendedBadge.classList.add('recommended-badge');
+        recommendedBadge.innerHTML = `<i class="fas fa-star"></i> Recommended`;
+        cardHeading.append(recommendedBadge);
     }
 
     const cardDescription = document.createElement('p');
@@ -154,15 +156,22 @@ const createCard = (cardInfo) => {
         cardMonthlyPrice.classList.add('custom-quote');
         cardMonthlyPrice.innerHTML = monthly;
     }
+
     const cardAnnualPrice = document.createElement('h3');
     cardAnnualPrice.classList.add('annual-price');
-    cardAnnualPrice.innerHTML = `<span>$${annual}</span>/ per month`;
+    cardAnnualPrice.classList.add('inactive');
+    if (typeof annual === 'number') {
+        cardAnnualPrice.innerHTML = `<span>$${annual}</span>/ per year`;
+    }   else {
+        cardAnnualPrice.classList.add('custom-quote');
+        cardAnnualPrice.innerHTML = annual;
+    }
 
     const freeTrialBtn = document.createElement('button');
     freeTrialBtn.classList.add('free-trial-btn');
     freeTrialBtn.innerText = 'Try 30 days for free';
 
-    planCard.append(cardHeading, cardDescription, cardMonthlyPrice, freeTrialBtn);
+    planCard.append(cardHeading, cardDescription, cardMonthlyPrice, cardAnnualPrice, freeTrialBtn);
 
     addCardExtras(cardInfo, planCard);
 
@@ -186,7 +195,34 @@ const addCardExtras = (cardInfo, target) => {
         }
         target.append(benefit);
     })
-    
+}
+
+const pricingMode = () => {
+    planCards.forEach(card => {
+        card.classList.toggle(subscriptionTypes[0].toLowerCase());
+        card.classList.toggle(subscriptionTypes[1].toLowerCase());
+        const monthlyPrices = document.querySelectorAll('.monthly-price');
+        const annualPrices = document.querySelectorAll('.annual-price');
+        if (card.classList.contains('monthly')) {
+            monthlyPrices.forEach(price => {
+                price.classList.remove('inactive');
+                price.classList.add('active');
+            });
+            annualPrices.forEach(price => {
+                price.classList.remove('active');
+                price.classList.add('inactive');
+            });
+        }   else {
+                annualPrices.forEach(price => {
+                    price.classList.remove('inactive');
+                    price.classList.add('active');
+                });
+                monthlyPrices.forEach(price => {
+                    price.classList.remove('active');
+                    price.classList.add('inactive');
+                });
+        }
+    });
 }
 
 planInfo.forEach(plan => {
