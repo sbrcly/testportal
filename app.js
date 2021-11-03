@@ -1,34 +1,3 @@
-// DOM Selectors
-const navbar = document.querySelector('nav');
-const navLeft = document.querySelector('.nav-left');
-const navRight = document.querySelector('.nav-right');
-const navMenu = document.querySelector('.nav-menu');
-const mainSection = document.querySelector('main');
-const mainHeading = document.querySelector('h1');
-const planTypeContainer = document.querySelector('.plan-type-buttons');
-const subscriptionToggler = document.querySelector('.toggle-overlay');
-const toggleLabels = document.querySelectorAll('.subscription-toggle h3')
-
-// Company and modular Information
-const navMenuIcon = '<i class="fas fa-bars"></i>';
-const companyLogo = {
-    image: '/images/companyLogo.PNG',
-    alt: 'Company Logo'
-};
-const pageCategories = ['Products', 'For whom', 'Use cases', 'Blog', 'Pricing'];
-const pageHeading = 'Plans that start free and grow with you';
-const planTypes = [
-    {
-        type: 'Business',
-        status: 'active'
-    },
-    {
-        type: 'Education',
-        status: 'inactive'
-    }
-];
-const subscriptionTypes = ['Monthly', 'Annually'];
-
 // Create Navbar**
 
 // Navbar Left Logo
@@ -43,6 +12,7 @@ addLogo(navLeft, companyLogo.image, companyLogo.alt);
 
 // Navbar Right Menu
 const hamburgerMenu = document.createElement('button');
+hamburgerMenu.setAttribute('name', 'Navigation Menu');
 hamburgerMenu.classList.add('hideMenu');
 hamburgerMenu.innerHTML = navMenuIcon;
 
@@ -58,8 +28,12 @@ document.body.prepend(navMenuItems);
 const createMenu = (target, menuItems) => {
     menuItems.forEach(item => {
         const menuItem = document.createElement('a');
-        menuItem.innerText = item;
-        menuItem.id = item;
+        menuItem.setAttribute('href', '#');
+        menuItem.innerText = item.name;
+        menuItem.id = item.name;
+        if (item.important === true) {
+            menuItem.classList.add('main-link');
+        }
         target.append(menuItem);
     });
 };
@@ -68,17 +42,35 @@ createMenu(navMenuItems, pageCategories);
 
 // Nav Menu Functionality
 
-hamburgerMenu.addEventListener('click', function (e) {
+hamburgerMenu.addEventListener('click', function () {
     showMenu(this, navMenuItems)
 });
+hamburgerMenu.addEventListener('blur', function () {
+    hideMenu(this, navMenuItems)
+});
+
 
 const showMenu = (target, items) => {
     target.classList.toggle('hideMenu');
     target.classList.toggle('showMenu');
     items.classList.toggle('hideItems');
     items.classList.toggle('showItems');
-}
+    sections.forEach(section => {
+        section.classList.toggle('menuOpen')
+        section.classList.toggle('menuClosed')
+    });
+};
 
+const hideMenu = (target, items) => {
+    target.classList.add('hideMenu');
+    target.classList.remove('showMenu');
+    items.classList.add('hideItems');
+    items.classList.remove('showItems');
+    sections.forEach(section => {
+        section.classList.remove('menuOpen')
+        section.classList.add('menuClosed')
+    });
+};
 
 // Create Header Content
 mainHeading.innerText = pageHeading;
@@ -88,13 +80,27 @@ mainHeading.innerText = pageHeading;
 // Plan Types
 planTypes.forEach(type => {
     const planTypeBtn = document.createElement('button');
+    planTypeBtn.setAttribute('name', 'Plan Type');
     planTypeBtn.innerText = type.type;
     planTypeBtn.classList.add('plan-type');
-    type.status === 'active' ?
-    planTypeBtn.classList.add('active') :
-    planTypeBtn.classList.add('inactive');
     planTypeContainer.append(planTypeBtn);
-})
+});
+
+// Plan BG animation
+const planBgOverlay = document.querySelector('.background-overlay')
+planBgOverlay.classList.add('left');
+const planButtons = document.querySelectorAll('.plan-type');
+planButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        if (this === planButtons[0]) {
+            planBgOverlay.classList.remove('right')
+            planBgOverlay.classList.add('left')
+        }   else {
+            planBgOverlay.classList.remove('left')
+            planBgOverlay.classList.add('right')
+        }
+    });
+});
 
 const planTypeBtns = document.querySelectorAll('.plan-type');
 planTypeBtns.forEach(button => {
@@ -105,7 +111,7 @@ planTypeBtns.forEach(button => {
         });
         button.classList.remove('inactive');
         button.classList.add('active')
-    })
+    });
 });
 
 // Subscription Type

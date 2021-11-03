@@ -8,10 +8,13 @@
 body {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  padding: 0.5rem 0.75rem;
   width: 100vw;
   overflow-x: hidden;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 button {
@@ -25,6 +28,12 @@ nav {
   align-items: center;
 }
 
+nav,
+header,
+main {
+  padding: 0.75rem;
+}
+
 nav img {
   width: 8rem;
 }
@@ -32,6 +41,12 @@ nav img {
 .nav-menu {
   display: flex;
   flex-direction: column;
+}
+
+nav img {
+  height: auto;
+  width: 200px;
+  max-width: 33vw;
 }
 
 nav button i {
@@ -62,21 +77,33 @@ nav button.hideMenu {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 9vh;
+  top: 12vh;
   right: 0;
   font-size: 0.75rem;
   text-align: left;
   background-color: #fff;
   transform: translateX(25vw);
+  z-index: 1;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 0.6rem 0 0 0.6rem;
 }
 
 #nav-menu-items a {
-  padding: 0.75rem;
+  padding: 0.75rem 1.5rem 0.75rem 1rem;
   color: #014751;
   margin-bottom: 1px;
   text-transform: uppercase;
+}
+
+#nav-menu-items a.main-link {
+  background-color: #014751;
+  color: #fff;
+}
+
+#nav-menu-items a.main-link:hover {
+  background-color: #014751;
+  opacity: 0.8;
+  transition: all 0.4s;
 }
 
 #nav-menu-items a:hover {
@@ -87,7 +114,7 @@ nav button.hideMenu {
   display: flex;
   flex-direction: column;
   transform: translateX(0vw);
-  transition: all 0.6s;
+  transition: all 0.4s;
 }
 
 #nav-menu-items.showItems a {
@@ -95,8 +122,35 @@ nav button.hideMenu {
   margin-bottom: 0;
 }
 
+#nav-menu-items a:nth-child(1) {
+  border-radius: 0.6rem 0 0 0;
+}
+
+#nav-menu-items a:last-of-type {
+  border-radius: 0 0 0 0.6rem;
+}
+
+#nav-menu-items.showItems a:nth-child(1) {
+  border-radius: 0.6rem 0 0 0;
+}
+
+#nav-menu-items.showItems a:last-of-type {
+  border-radius: 0 0 0 0.6rem;
+}
+
 #nav-menu-items.hideItems {
-  transform: translateX(25vw);
+  transform: translateX(33vw);
+  transition: all 0.6s;
+}
+
+.menuOpen {
+  z-index: -2;
+  opacity: 0.3;
+  transition: all 0.6s;
+}
+
+.menuClosed {
+  opacity: 1;
   transition: all 0.6s;
 }
 
@@ -119,19 +173,38 @@ main {
 
 .plan-type {
   font-size: 1.25rem;
+  background-color: #fff;
   color: #014751;
   padding: 1rem;
-  border-bottom: 2px solid #eee;
+  margin-bottom: 2px;
 }
 
-.plan-type.active {
-  border-bottom: 2px solid #014751;
-  transition: all 0.2s 0.2s;
+.plan-type:hover {
+  cursor: pointer;
 }
 
-.plan-type.inactive {
-  border-bottom: 2px solid #eee;
-  transition: all 0.2s;
+.plan-type-buttons {
+  position: relative;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+  background-color: #014751;
+}
+
+.background-overlay.left {
+  left: 0;
+  transition: all 0.5s;
+}
+
+.background-overlay.right {
+  left: 50%;
+  transition: all 0.5s;
 }
 
 /* Toggler */
@@ -148,7 +221,7 @@ main {
   background-color: #64db9b;
 }
 
-h3 {
+p {
   color: #014751;
   font-size: 1rem;
   font-weight: 300;
@@ -167,10 +240,12 @@ h3 {
 
 .toggle-overlay.left {
   margin: 0.2rem 1.75rem 0.2rem 0.2rem;
+  box-shadow: 2px 0 5px rgba(50, 50, 50, 0.2);
   transition: all 0.3s;
 }
 
 .toggle-overlay.right {
-  margin: 0.2rem 0.25rem 0.2rem 1.75rem;
+  margin: 0.2rem 0.2rem 0.2rem 1.75rem;
+  box-shadow: -2px 0 5px rgba(50, 50, 50, 0.2);
   transition: all 0.3s;
 }
