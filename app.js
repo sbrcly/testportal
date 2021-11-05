@@ -115,6 +115,9 @@ planTypeBtns.forEach(button => {
 });
 
 // Subscription Type
+const subscriptionOptions = document.querySelectorAll('.toggle-option');
+subscriptionOptions.forEach((option, index) => option.innerText = subscriptionTypes[index]);
+
 subscriptionToggler.addEventListener('click', function() {
     this.classList.toggle('left');
     this.classList.toggle('right');

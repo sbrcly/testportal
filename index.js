@@ -197,4 +197,4 @@ const planInfo = [
         ]
     }
 ]
-const subscriptionTypes = ['Monthly', 'Annually'];
+const subscriptionTypes = ['Monthly', 'Anually'];
