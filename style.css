@@ -252,14 +252,13 @@ p {
 	color: #014751;
 	border-radius: 1rem;
 	text-align: left;
+	opacity: 0;
 	box-shadow: 0 0 2px rgba(100, 100, 100, 0.5);
+	transition: all 1s;
 }
 
 .recommended-card {
 	background-color: #ffeeb4;
-}
-
-.monthly {
 }
 
 .plan-card * {
@@ -368,4 +367,10 @@ p {
 .recommended-card .extra-benefit.notIncluded i {
 	color: rgba(238, 238, 238, 0.705);
 	background-color: #01465194;
+}
+
+/* Scroll Animation */
+
+.plan-card.show-card {
+	opacity: 1;
 }

@@ -231,6 +231,29 @@ const pricingMode = () => {
 planInfo.forEach(plan => {
     createCard(plan);
 });
-
 const planCards = document.querySelectorAll('.plan-card');
 
+// Load Cards on scroll
+window.addEventListener('scroll', (e) => {
+    if (this.scrollY < 812) {
+        planCards[0].classList.add('show-card');
+    };
+    if (this.scrollY > 800) {
+        planCards[1].classList.add('show-card');
+    };
+    if (this.scrollY > 1700) {
+        planCards[2].classList.add('show-card');
+    }
+    if (this.scrollY > 2600) {
+        planCards[3].classList.add('show-card');
+    }
+    if (this.scrollY < 2600) {
+        planCards[3].classList.remove('show-card');
+    }
+    if (this.scrollY < 1700) {
+        planCards[2].classList.remove('show-card');
+    }
+    if (this.scrollY < 800) {
+        planCards[1].classList.remove('show-card');
+    };
+});
