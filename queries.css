@@ -1,0 +1,91 @@
+@media (min-width: 540px) {
+	h1 {
+		max-width: 80vw;
+		margin: 10vh auto 0 auto;
+	}
+}
+
+@media (min-width: 765px) {
+	h1 {
+		font-size: 3rem;
+	}
+	nav,
+	header,
+	main {
+		padding: 1.5rem;
+	}
+
+	.nav-menu {
+		flex-direction: row;
+	}
+
+	#nav-menu-items {
+		flex-direction: row;
+		position: relative;
+		top: 0;
+		right: 0;
+		font-size: 0.75rem;
+		text-align: center;
+		background-color: #fff;
+		transform: translateX(0vw);
+		box-shadow: none;
+		border-radius: 0;
+	}
+
+	#nav-menu-items a {
+		padding: 0.5rem;
+		margin: 0.5rem;
+		border-radius: 0.4rem;
+	}
+
+	#nav-menu-items a:last-of-type {
+		border-radius: 0.4rem;
+	}
+
+	.plan-cards-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.plan-card {
+		width: 40vw;
+	}
+
+	.plan-card h2 {
+		height: 60px;
+	}
+
+	.plan-card h3 {
+		height: 72px;
+		padding: 1.5rem 0 0 0;
+	}
+
+	h3.custom-quote {
+		padding: 1.5rem 0 0 0;
+	}
+
+	.plan-card p {
+		height: 76px;
+	}
+}
+
+@media (min-width: 1500px) {
+	#nav-menu-items {
+		font-size: 1.05rem;
+	}
+	.plan-cards-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.plan-card {
+		width: 20vw;
+		max-width: 400px;
+		margin: 0 2vw;
+	}
+
+	.free-trial-btn:hover {
+		opacity: 0.6;
+		transition: all 0.4s;
+	}
+}

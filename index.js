@@ -11,6 +11,7 @@ const subscriptionToggler = document.querySelector('.toggle-overlay');
 const toggleLabels = document.querySelectorAll('.subscription-toggle h3')
 const sections = [mainSection, header];
 const buttons = document.querySelectorAll('button');
+const planCardsContainer = document.querySelector('.plan-cards-container');
 
 // Company and modular Information
 const navMenuIcon = '<i class="fas fa-bars"></i>';

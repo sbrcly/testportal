@@ -51,26 +51,46 @@ hamburgerMenu.addEventListener('blur', function () {
 
 
 const showMenu = (target, items) => {
-    target.classList.toggle('hideMenu');
-    target.classList.toggle('showMenu');
-    items.classList.toggle('hideItems');
-    items.classList.toggle('showItems');
-    sections.forEach(section => {
-        section.classList.toggle('menuOpen')
-        section.classList.toggle('menuClosed')
-    });
+    if (window.innerWidth < 765) {
+        target.classList.toggle('hideMenu');
+        target.classList.toggle('showMenu');
+        items.classList.toggle('hideItems');
+        items.classList.toggle('showItems');
+        sections.forEach(section => {
+            section.classList.toggle('menuOpen')
+            section.classList.toggle('menuClosed')
+        });
+    }   
 };
 
 const hideMenu = (target, items) => {
-    target.classList.add('hideMenu');
-    target.classList.remove('showMenu');
-    items.classList.add('hideItems');
-    items.classList.remove('showItems');
+    if (window.innerWidth < 765) {
+        target.classList.add('hideMenu');
+        target.classList.remove('showMenu');
+        items.classList.add('hideItems');
+        items.classList.remove('showItems');
+        sections.forEach(section => {
+            section.classList.remove('menuOpen')
+            section.classList.add('menuClosed')
+        });
+    }   
+};
+
+// Remove Hamburger Menu classes on larger devices
+if (window.innerWidth >= 765) {
+    hamburgerMenu.classList.remove('hideMenu');
+    hamburgerMenu.classList.remove('showMenu');
+    navMenuItems.classList.remove('hideItems');
+    navMenuItems.classList.remove('showItems');
     sections.forEach(section => {
         section.classList.remove('menuOpen')
-        section.classList.add('menuClosed')
+        section.classList.remove('menuClosed')
     });
-};
+    hamburgerMenu.remove();
+    let navMenuItemsPlaceholder = navMenuItems;
+    navMenuItems.remove();
+    navMenu.append(navMenuItemsPlaceholder);
+}
 
 // Create Header Content
 mainHeading.innerText = pageHeading;
@@ -175,10 +195,9 @@ const createCard = (cardInfo) => {
     freeTrialBtn.innerText = 'Try 30 days for free';
 
     planCard.append(cardHeading, cardDescription, cardMonthlyPrice, cardAnnualPrice, freeTrialBtn);
-
     addCardExtras(cardInfo, planCard);
 
-    mainSection.append(planCard);
+    planCardsContainer.append(planCard);
 
 };
 
@@ -232,7 +251,18 @@ planInfo.forEach(plan => {
     createCard(plan);
 });
 const planCards = document.querySelectorAll('.plan-card');
-planCards[0].classList.add('show-card');
+console.log(window.innerWidth);
+
+if (window.innerWidth < 765) {
+    planCards[0].classList.add('show-card');
+}   else if (window.innerWidth < 1500) {
+    planCards[0].classList.add('show-card');
+    planCards[1].classList.add('show-card');
+}   else {
+    for (let card of planCards) {
+        card.classList.add('show-card');
+    }
+}
 
 // Load Cards on scroll
 window.addEventListener('scroll', (e) => {

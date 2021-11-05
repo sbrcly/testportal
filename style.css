@@ -272,6 +272,10 @@ p {
 	align-items: center;
 }
 
+h3.custom-quote {
+	font-size: 2rem;
+}
+
 .recommended-badge {
 	font-size: 0.8rem;
 	padding: 0 0.5rem;
@@ -301,6 +305,7 @@ p {
 .annual-price.active {
 	display: block;
 	opacity: 1;
+	z-index: 1;
 	transition: all 1s;
 }
 
@@ -308,6 +313,7 @@ p {
 .annual-price.inactive {
 	position: absolute;
 	opacity: 0;
+	z-index: -1;
 }
 
 .custom-quote {
