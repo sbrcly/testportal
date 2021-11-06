@@ -172,6 +172,7 @@ if (window.innerWidth < 765) {
 
 // Load Cards on scroll
 window.addEventListener('scroll', (e) => {
+    console.log(e);
     for (let card of planCards) {
         let getPosition = window.innerHeight - card.getClientRects()[0].top;
         if (getPosition > 50) {
