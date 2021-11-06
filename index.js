@@ -15,39 +15,194 @@ const planCardsContainer = document.querySelector('.plan-cards-container');
 
 // Company and modular Information
 const navMenuIcon = '<i class="fas fa-bars"></i>';
-const pageHeading = 'Plans that start free and grow with you';
+const pageHeading = 'Pick your plan. Change whenever you want.';
 const companyLogo = {
     image: '/images/companyLogo.PNG',
     alt: 'Company Logo'
 };
 const pageCategories = [
     {
-        name: 'Products',
-        important: false
+        name: 'Product',
+        important: false,
+        extras: [
+            {
+                name: 'Skills and knowledge assessment',
+                icon: undefined
+            },
+            {
+                name: 'Reporting',
+                icon: undefined
+            },
+            {
+                name: 'Insights & Analytics',
+                icon: undefined
+            },
+            {
+                name: 'Customization',
+                icon: undefined
+            },
+            {
+                name: 'Feedback & Grades',
+                icon: undefined
+            },
+            {
+                name: 'Integrations & API',
+                icon: undefined
+            },
+            {
+                name: 'Proctoring & Security',
+                icon: undefined
+            },
+            {
+                name: 'Dedicated app for Microsoft Teams',
+                icon: undefined
+            },
+            {
+                name: 'Self-graded open-ended & choice questions',
+                icon: undefined
+            },
+            {
+                name: 'Security',
+                icon: undefined
+            },
+            {
+                name: 'Certificates',
+                icon: undefined
+            }
+        ]
     },
     {
         name: 'For whom',
-        important: false
+        important: false,
+        extras: [ 
+            {
+                name: 'Business',
+                icon: undefined,
+                extras: [
+                    {
+                        name: 'Human Resources',
+                    },
+                    {
+                        name: 'Training companies & departments',
+                    },
+                    {
+                        name: 'Certification institutions',
+                    },
+                    {
+                        name: 'Sales & Customer service',
+                    }
+                ]
+            },
+            {
+                name: 'Education',
+                icon: undefined,
+                extras: [
+                    {
+                        name: 'Teachers'
+                    },
+                    {
+                        name: 'Schools'
+                    },
+                    {
+                        name: 'Higher education'
+                    },
+                    {
+                        name: 'Language schools'
+                    }
+                ]
+            }
+        ]
     },
     {
         name: 'Use cases',
-        important: false
+        important: false,
+        extras: [
+            {
+                name: 'Business',
+                icon: undefined,
+                extras: [
+                    {
+                        name: 'Recruitment',
+                    },
+                    {
+                        name: 'Employee assessment',
+                    },
+                    {
+                        name: 'Trainings',
+                    },
+                    {
+                        name: 'Sales Training',
+                    },
+                    {
+                        name: 'Customer service',
+                    },
+                    {
+                        name: 'Safety procedures',
+                    },
+                    {
+                        name: 'Certification',
+                    }
+                ]
+            },
+            {
+                name: 'Education',
+                icon: undefined,
+                extras: [
+                    {
+                        name: 'Quizzes'
+                    },
+                    {
+                        name: 'Exams/High-stakes'
+                    },
+                    {
+                        name: 'Homework'
+                    },
+                    {
+                        name: 'Competition'
+                    },
+                    {
+                        name: 'Formative assessment'
+                    }
+                ]
+            }
+        ]
     },
     {
         name: 'Blog',
-        important: false
+        important: false,
+        extras: []
     },
     {
         name: 'Pricing',
-        important: false
+        important: false,
+        extras: [
+            {
+                name: 'Business',
+                icon: undefined
+            },
+            {
+                name: 'Education',
+                icon: undefined
+            },
+            {
+                name: 'Conducting assessments on behalf',
+                icon: undefined
+            }
+        ]
     },
     {
         name: 'Login',
-        important: true
+        important: true,
+        extras: [
+
+        ]
     },
     {
         name: 'Sign Up',
-        important: true
+        important: true,
+        extras: [
+
+        ]
     },
 ]
 const planTypes = [
@@ -65,16 +220,16 @@ const planInfo = [
         header: 'Standard',
         recommended: false,
         description: 'Ideal for low-volume testing where no advanced results analytics is needed',
-        monthly: 23,
-        annual: 249,
+        monthly: 35,
+        annual: 29,
         limit: 30,
         extras: [
             {
-                description: 'Limit of results collected per month',
+                description: 'Max number of results per month',
                 value: 30
             },
             {
-                description: 'Advanced test configuration',
+                description: 'Various innovative test configuration options',
                 value: true
             },
             {
@@ -90,7 +245,7 @@ const planInfo = [
                 value: false
             },
             {
-                description: 'Cusomization & Premium support',
+                description: 'Customizatoin & API Integration',
                 value: false
             }
         ]
@@ -99,16 +254,16 @@ const planInfo = [
         header: 'Pro',
         recommended: true,
         description: 'Fits to most use cases with limited results collected per month',
-        monthly: 49,
-        annual: 529,
+        monthly: 69,
+        annual: 59,
         limit: 500,
         extras: [
             {
-                description: 'Limit of results collected per month',
-                value: 500
+                description: 'Max number of results per month',
+                value: 300
             },
             {
-                description: 'Advanced test configuration',
+                description: 'Various innovative test configuration options',
                 value: true
             },
             {
@@ -124,7 +279,7 @@ const planInfo = [
                 value: false
             },
             {
-                description: 'Cusomization & Premium support',
+                description: 'Customizatoin & API Integration',
                 value: false
             }
         ]
@@ -132,17 +287,17 @@ const planInfo = [
     {
         header: 'Max',
         recommended: false,
-        description: 'Unlimited features and no limit of results collected per month',
-        monthly: 137,
-        annual: 1399,
-        limit: 'Unlimited',
+        description: 'Unlimited features and no Max number of results per month',
+        monthly: 119,
+        annual: 99,
+        limit: 3000,
         extras: [
             {
-                description: 'Limit of results collected per month',
+                description: 'Max number of results per month',
                 value: 'Unlimited'
             },
             {
-                description: 'Advanced test configuration',
+                description: 'Various innovative test configuration options',
                 value: true
             },
             {
@@ -158,7 +313,7 @@ const planInfo = [
                 value: false
             },
             {
-                description: 'Cusomization & Premium support',
+                description: 'Customizatoin & API Integration',
                 value: false
             }
         ]
@@ -172,11 +327,11 @@ const planInfo = [
         limit: 'Unlimited',
         extras: [
             {
-                description: 'Limit of results collected per month',
+                description: 'Max number of results per month',
                 value: 'Unlimited'
             },
             {
-                description: 'Advanced test configuration',
+                description: 'Various innovative test configuration options',
                 value: true
             },
             {
@@ -192,10 +347,10 @@ const planInfo = [
                 value: true
             },
             {
-                description: 'Cusomization & Premium support',
+                description: 'Customizatoin & API Integration',
                 value: true
             }
         ]
     }
 ]
-const subscriptionTypes = ['Monthly', 'Anually'];
+const subscriptionTypes = ['Annually', 'Monthly'];

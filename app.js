@@ -1,101 +1,7 @@
-// Create Navbar**
-
-// Navbar Left Logo
-const addLogo = (target, logo, description) => {
-    const newLogo = document.createElement('img');
-    newLogo.setAttribute('src', logo);
-    newLogo.setAttribute('alt', description);
-    target.append(newLogo);
-};
-
-addLogo(navLeft, companyLogo.image, companyLogo.alt);
-
-// Navbar Right Menu
-const hamburgerMenu = document.createElement('button');
-hamburgerMenu.setAttribute('aria-label', 'Navigation Menu');
-hamburgerMenu.classList.add('hideMenu');
-hamburgerMenu.innerHTML = navMenuIcon;
-
-navMenu.append(hamburgerMenu);
-
-
-// Create Menu Items
-const navMenuItems = document.createElement('div');
-navMenuItems.classList.add('hideItems');
-navMenuItems.id = 'nav-menu-items';
-document.body.prepend(navMenuItems);
-
-const createMenu = (target, menuItems) => {
-    menuItems.forEach(item => {
-        const menuItem = document.createElement('a');
-        menuItem.setAttribute('href', '#');
-        menuItem.innerText = item.name;
-        menuItem.id = item.name;
-        if (item.important === true) {
-            menuItem.classList.add('main-link');
-        }
-        target.append(menuItem);
-    });
-};
-
-createMenu(navMenuItems, pageCategories);
-
-// Nav Menu Functionality
-
-hamburgerMenu.addEventListener('click', function () {
-    showMenu(this, navMenuItems)
-});
-hamburgerMenu.addEventListener('blur', function () {
-    hideMenu(this, navMenuItems)
-});
-
-
-const showMenu = (target, items) => {
-    if (window.innerWidth < 765) {
-        target.classList.toggle('hideMenu');
-        target.classList.toggle('showMenu');
-        items.classList.toggle('hideItems');
-        items.classList.toggle('showItems');
-        sections.forEach(section => {
-            section.classList.toggle('menuOpen')
-            section.classList.toggle('menuClosed')
-        });
-    }   
-};
-
-const hideMenu = (target, items) => {
-    if (window.innerWidth < 765) {
-        target.classList.add('hideMenu');
-        target.classList.remove('showMenu');
-        items.classList.add('hideItems');
-        items.classList.remove('showItems');
-        sections.forEach(section => {
-            section.classList.remove('menuOpen')
-            section.classList.add('menuClosed')
-        });
-    }   
-};
-
-// Remove Hamburger Menu classes on larger devices
-if (window.innerWidth >= 765) {
-    hamburgerMenu.classList.remove('hideMenu');
-    hamburgerMenu.classList.remove('showMenu');
-    navMenuItems.classList.remove('hideItems');
-    navMenuItems.classList.remove('showItems');
-    sections.forEach(section => {
-        section.classList.remove('menuOpen')
-        section.classList.remove('menuClosed')
-    });
-    hamburgerMenu.remove();
-    let navMenuItemsPlaceholder = navMenuItems;
-    navMenuItems.remove();
-    navMenu.append(navMenuItemsPlaceholder);
-}
+// Main Content
 
 // Create Header Content
 mainHeading.innerText = pageHeading;
-
-// Main Content
 
 // Plan Types
 planTypes.forEach(type => {
@@ -152,7 +58,7 @@ const createCard = (cardInfo) => {
 
     const planCard = document.createElement('div');
     planCard.classList.add('plan-card');
-    planCard.classList.add('monthly');
+    planCard.classList.add('annually');
 
     const cardHeading = document.createElement('h2');
     cardHeading.classList.add('card-heading');
@@ -163,7 +69,7 @@ const createCard = (cardInfo) => {
         planCard.classList.add('recommended-card');
         recommendedBadge = document.createElement('span');
         recommendedBadge.classList.add('recommended-badge');
-        recommendedBadge.innerHTML = `<i class="fas fa-star"></i> Recommended`;
+        recommendedBadge.innerHTML = `<i class="fas fa-star"></i> Most Popular`;
         cardHeading.append(recommendedBadge);
     }
 
@@ -173,6 +79,7 @@ const createCard = (cardInfo) => {
 
     const cardMonthlyPrice = document.createElement('h3');
     cardMonthlyPrice.classList.add('monthly-price');
+    cardMonthlyPrice.classList.add('inactive');
     if (typeof monthly === 'number') {
         cardMonthlyPrice.innerHTML = `<span>$${monthly}</span>/ per month`;
     }   else {
@@ -182,9 +89,9 @@ const createCard = (cardInfo) => {
 
     const cardAnnualPrice = document.createElement('h3');
     cardAnnualPrice.classList.add('annual-price');
-    cardAnnualPrice.classList.add('inactive');
+    cardAnnualPrice.classList.add('active');
     if (typeof annual === 'number') {
-        cardAnnualPrice.innerHTML = `<span>$${annual}</span>/ per year`;
+        cardAnnualPrice.innerHTML = `<span>$${annual}</span>/ per month`;
     }   else {
         cardAnnualPrice.classList.add('custom-quote');
         cardAnnualPrice.innerHTML = annual;
@@ -192,7 +99,7 @@ const createCard = (cardInfo) => {
 
     const freeTrialBtn = document.createElement('button');
     freeTrialBtn.classList.add('free-trial-btn');
-    freeTrialBtn.innerText = 'Try 30 days for free';
+    freeTrialBtn.innerText = 'Test 14 days for free';
 
     planCard.append(cardHeading, cardDescription, cardMonthlyPrice, cardAnnualPrice, freeTrialBtn);
     addCardExtras(cardInfo, planCard);
@@ -251,7 +158,6 @@ planInfo.forEach(plan => {
     createCard(plan);
 });
 const planCards = document.querySelectorAll('.plan-card');
-console.log(window.innerWidth);
 
 if (window.innerWidth < 765) {
     planCards[0].classList.add('show-card');
@@ -268,10 +174,10 @@ if (window.innerWidth < 765) {
 window.addEventListener('scroll', (e) => {
     for (let card of planCards) {
         let getPosition = window.innerHeight - card.getClientRects()[0].top;
-        if (getPosition > 200) {
+        if (getPosition > 50) {
             card.classList.add('show-card');
         }
-        if (getPosition < 200) {
+        if (getPosition < 50) {
             card.classList.remove('show-card');
         }
     }
