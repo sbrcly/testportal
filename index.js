@@ -6,10 +6,11 @@ const navMenu = document.querySelector('.nav-menu');
 const mainSection = document.querySelector('main');
 const header = document.querySelector('header');
 const mainHeading = document.querySelector('h1');
+const testimonies = document.querySelector('.testimonials')
 const planTypeContainer = document.querySelector('.plan-type-buttons');
 const subscriptionToggler = document.querySelector('.toggle-overlay');
 const toggleLabels = document.querySelectorAll('.subscription-toggle h3')
-const sections = [mainSection, header];
+const sections = [mainSection, header, testimonies];
 const buttons = document.querySelectorAll('button');
 const planCardsContainer = document.querySelector('.plan-cards-container');
 
@@ -27,47 +28,47 @@ const pageCategories = [
         extras: [
             {
                 name: 'Skills and knowledge assessment',
-                icon: undefined
+                icon: '<i class="fas fa-user-circle"></i>'
             },
             {
                 name: 'Reporting',
-                icon: undefined
+                icon: '<i class="fas fa-calendar"></i>'
             },
             {
                 name: 'Insights & Analytics',
-                icon: undefined
+                icon: '<i class="far fa-chart-bar"></i>'
             },
             {
                 name: 'Customization',
-                icon: undefined
+                icon: '<i class="fas fa-paint-roller"></i>'
             },
             {
                 name: 'Feedback & Grades',
-                icon: undefined
+                icon: '<i class="fas fa-comments"></i>'
             },
             {
                 name: 'Integrations & API',
-                icon: undefined
+                icon: '<i class="fas fa-code"></i>'
             },
             {
                 name: 'Proctoring & Security',
-                icon: undefined
+                icon: '<i class="fas fa-eye"></i>'
             },
             {
                 name: 'Dedicated app for Microsoft Teams',
-                icon: undefined
+                icon: '<i class="fas fa-user"></i>'
             },
             {
-                name: 'Self-graded open-ended & choice questions',
-                icon: undefined
+                name: 'Self-graded & open-ended questions',
+                icon: '<i class="fas fa-newspaper"></i>'
             },
             {
                 name: 'Security',
-                icon: undefined
+                icon: '<i class="fas fa-shield-alt"></i>'
             },
             {
                 name: 'Certificates',
-                icon: undefined
+                icon: '<i class="fas fa-award"></i>'
             }
         ]
     },
@@ -77,7 +78,7 @@ const pageCategories = [
         extras: [ 
             {
                 name: 'Business',
-                icon: undefined,
+                icon: '<i class="fas fa-file-alt"></i>',
                 extras: [
                     {
                         name: 'Human Resources',
@@ -95,7 +96,7 @@ const pageCategories = [
             },
             {
                 name: 'Education',
-                icon: undefined,
+                icon: '<i class="fas fa-book-open"></i>',
                 extras: [
                     {
                         name: 'Teachers'
@@ -119,7 +120,7 @@ const pageCategories = [
         extras: [
             {
                 name: 'Business',
-                icon: undefined,
+                icon: '<i class="fas fa-file-alt"></i>',
                 extras: [
                     {
                         name: 'Recruitment',
@@ -146,7 +147,7 @@ const pageCategories = [
             },
             {
                 name: 'Education',
-                icon: undefined,
+                icon: '<i class="fas fa-book-open"></i>',
                 extras: [
                     {
                         name: 'Quizzes'
@@ -168,27 +169,27 @@ const pageCategories = [
         ]
     },
     {
-        name: 'Blog',
-        important: false,
-        extras: []
-    },
-    {
         name: 'Pricing',
         important: false,
         extras: [
             {
                 name: 'Business',
-                icon: undefined
+                icon: '<i class="fas fa-building"></i>'
             },
             {
                 name: 'Education',
-                icon: undefined
+                icon: '<i class="fas fa-book-open"></i>'
             },
             {
                 name: 'Conducting assessments on behalf',
-                icon: undefined
+                icon: '<i class="fas fa-file-alt"></i>'
             }
         ]
+    },
+    {
+        name: 'Blog',
+        important: false,
+        extras: []
     },
     {
         name: 'Login',
@@ -354,3 +355,33 @@ const planInfo = [
     }
 ]
 const subscriptionTypes = ['Annually', 'Monthly'];
+
+// TESTIMONIALS
+const testimoniesHeading = `You'll be in good company`;
+const testimoniesTagline = 'We helped these brands turn online assessments into success stories. Join them. Elevate your testing.';
+const testimonials = [
+    {
+        name: 'Schenker',
+        logo: undefined
+    },
+    {
+        name: 'Electrolux',
+        logo: undefined
+    },
+    {
+        name: 'DHL',
+        logo: undefined
+    },
+    {
+        name: 'Broen',
+        logo: undefined
+    },
+    {
+        name: 'Sega',
+        logo: undefined
+    },
+    {
+        name: 'Techland',
+        logo: undefined
+    }
+]

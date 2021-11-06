@@ -1,269 +1,316 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	line-height: 1;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1;
 }
 
 body {
-	font-size: 16px;
-	font-family: 'Roboto', sans-serif;
-	width: 100vw;
-	overflow-x: hidden;
-	text-align: center;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+  text-align: center;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-	background-color: transparent;
-	border: none;
+  background-color: transparent;
+  border: none;
 }
 
 nav,
 header,
 main {
-	padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem;
+  opacity: 1;
+  transition: all 0.6s;
 }
 
 /* Header */
 
 /* Main Section */
 h1 {
-	margin-top: 15vh;
-	font-size: 1.75rem;
-	font-weight: 700;
-	color: #014751;
-	max-width: 90vw;
-	text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  margin: 15vh auto 0 auto;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #014751;
+  max-width: 90vw;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 main {
-	margin-top: 8vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .plan-type {
-	font-size: 1.25rem;
-	background-color: #fff;
-	color: #014751;
-	padding: 1rem;
-	margin-bottom: 2px;
+  font-size: 1.25rem;
+  background-color: #fff;
+  color: #014751;
+  padding: 1rem;
+  margin-bottom: 2px;
 }
 
 .plan-type:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .plan-type-buttons {
-	position: relative;
+  position: relative;
 }
 
 .background-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 50%;
-	z-index: -1;
-	background-color: #014751;
-}
-
-.background-overlay.left {
-	left: 0;
-	transition: all 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+  background-color: #014751;
+  transition: all 0.5s;
 }
 
 .background-overlay.right {
-	left: 50%;
-	transition: all 0.5s;
+  left: 50%;
+  transition: all 0.5s;
 }
 
 /* Toggler */
 
 .subscriptions {
-	margin: 3rem 0 0.5rem 0;
-	display: flex;
-	align-items: center;
+  margin: 3rem 0 0.5rem 0;
+  display: flex;
+  align-items: center;
 }
 
 .subscription-toggle {
-	display: flex;
-	border-radius: 2.5rem;
-	margin: 0 0.75rem;
-	background-color: #64db9b;
+  display: flex;
+  border-radius: 2.5rem;
+  margin: 0 0.75rem;
+  background-color: #64db9b;
 }
 
 p {
-	color: #014751;
-	font-size: 0.9rem;
-	font-weight: 300;
+  color: #014751;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
 .toggle-overlay {
-	padding: 0.65rem;
-	/* margin: 0.2rem 1.75rem 0.2rem 0.2rem; */
-	border-radius: 50%;
-	background-color: #fff;
+  padding: 0.65rem;
+  /* margin: 0.2rem 1.75rem 0.2rem 0.2rem; */
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 .toggle-overlay:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .toggle-overlay.left {
-	margin: 0.2rem 1.75rem 0.2rem 0.2rem;
-	box-shadow: 2px 0 5px rgba(50, 50, 50, 0.2);
-	transition: all 0.3s;
+  margin: 0.2rem 1.75rem 0.2rem 0.2rem;
+  box-shadow: 2px 0 5px rgba(50, 50, 50, 0.2);
+  transition: all 0.3s;
 }
 
 .toggle-overlay.right {
-	margin: 0.2rem 0.2rem 0.2rem 1.75rem;
-	box-shadow: -2px 0 5px rgba(50, 50, 50, 0.2);
-	transition: all 0.3s;
+  margin: 0.2rem 0.2rem 0.2rem 1.75rem;
+  box-shadow: -2px 0 5px rgba(50, 50, 50, 0.2);
+  transition: all 0.3s;
 }
 
 /* Plan Cards */
 
 .plan-card {
-	position: relative;
-	margin: 3rem 0.5rem;
-	padding: 2rem 1.5rem;
-	color: #014751;
-	border-radius: 1rem;
-	text-align: left;
-	opacity: 0;
-	box-shadow: 0 0 2px rgba(100, 100, 100, 0.5);
-	transition: all 1s;
+  position: relative;
+  margin: 3rem 0.5rem;
+  padding: 2rem 1.5rem;
+  color: #014751;
+  border-radius: 1rem;
+  text-align: left;
+  opacity: 0;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.5);
+  transition: all 1s;
 }
 
 .recommended-card {
-	background-color: #ffeeb4;
+  background-color: #ffeeb4;
 }
 
 .plan-card * {
-	padding: 0.75rem 0;
+  padding: 0.75rem 0;
 }
 
 .plan-card h2 {
-	font-size: 1.6rem;
-	font-weight: 700;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h3.custom-quote {
-	font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .recommended-badge {
-	font-size: 0.8rem;
-	padding: 0 0.5rem;
-	background-color: #fff;
-	border-radius: 0.6rem;
-	box-shadow: 0 0 1px rgba(100, 100, 100, 0.5);
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
+  background-color: #fff;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 1px rgba(100, 100, 100, 0.5);
 }
 
 .plan-card p {
-	font-size: 1.1rem;
-	line-height: 1.5;
-	padding-right: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding-right: 1rem;
 }
 
 .monthly-price,
 .annual-price {
-	font-weight: 100;
+  font-weight: 100;
 }
 
 .monthly-price span,
 .annual-price span {
-	font-size: 2.75rem;
-	font-weight: 700;
+  font-size: 2.75rem;
+  font-weight: 700;
 }
 
 .monthly-price.active,
 .annual-price.active {
-	display: block;
-	opacity: 1;
-	z-index: 1;
+  display: block;
+  opacity: 1;
+  z-index: 1;
 }
 
 .monthly-price.inactive,
 .annual-price.inactive {
-	position: absolute;
-	opacity: 0;
-	z-index: -1;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
 }
 
 .custom-quote {
-	font-size: 1.25rem;
-	font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .free-trial-btn {
-	background-color: #014751;
-	font-size: 1rem;
-	font-weight: 700;
-	width: 100%;
-	margin: 1rem 0;
-	color: #fff;
-	border-radius: 0.6rem;
-	margin: 0.5rem 0;
-	padding: 0.75rem 0;
+  background-color: #014751;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100%;
+  margin: 1rem 0;
+  color: #fff;
+  border-radius: 0.6rem;
+  margin: 0.5rem 0;
+  padding: 0.75rem 0;
 }
 
 .extra-benefit {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.25rem;
 }
 
 .extra-benefit span {
-	max-width: 60%;
-	font-weight: 400;
-	line-height: 1.5;
+  max-width: 60%;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .extra-benefit span:last-of-type {
-	font-size: 1rem;
-	font-weight: 700;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .extra-benefit i {
-	font-size: 1.5rem;
-	border-radius: 50%;
-	padding: 0;
-	border: none;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
 }
 
 .extra-benefit.included i {
-	color: #64db9b;
-	background-color: #014751;
+  color: #64db9b;
 }
 
 .extra-benefit.notIncluded i {
-	color: #eee;
-	background-color: #014751;
+  color: #eee;
 }
 
 .recommended-card .extra-benefit.included i {
-	color: #fff;
-	background-color: #014751;
+  color: #64db9b;
 }
 
 .recommended-card .extra-benefit.notIncluded i {
-	color: rgba(238, 238, 238, 0.705);
-	background-color: #01465194;
+  color: rgba(34, 34, 34, 0.2);
 }
 
 /* Scroll Animation */
 
 .plan-card.show-card {
-	opacity: 1;
+  opacity: 1;
+}
+
+.compare-plans {
+  margin: 1rem;
+  padding: 0.75rem 1.5rem;
+  color: #014751;
+  border: 2px solid #014751;
+  font-size: 1.05rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+}
+
+.compare-plans:hover {
+  background-color: #01465138;
+}
+
+/* SECTION: TESTIMONIALS */
+
+.testimonials {
+  margin: 5rem 0;
+}
+
+.testimony-head {
+  font-size: 1.5rem;
+  max-width: 70vw;
+  margin: auto;
+  color: #014751;
+  font-weight: 900;
+  padding: 2rem 0;
+}
+
+.testimony-tagline {
+  max-width: 80vw;
+  margin: auto;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.testimonial-carousel {
+  position: relative;
+  padding: 5rem 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.testimonial-logo {
+  position: absolute;
+  margin: 0 2rem;
+  padding: 0 2rem;
+  opacity: 0.3;
 }
