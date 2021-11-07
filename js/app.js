@@ -192,6 +192,7 @@ const addCompanyTestimonials = (appendTo, companies) => {
     for (let company of companies) {
         const newLogo = document.createElement('img');
         newLogo.setAttribute('src', `${company.logo}`);
+        newLogo.setAttribute('alt', `Company logo for ${company.name}`)
         newLogo.classList.add('testimonial-logo');
         appendTo.append(newLogo);
     }
