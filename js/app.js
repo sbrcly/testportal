@@ -209,7 +209,7 @@ const createTestimonyCarousel = (carouselContent) => {
 }
 
 const runTestimonyCarousel = (carouselContent) => {
-    let transformX = 1;
+    let transformX = 33;
     const moveCarousel = setInterval(() => {
         for (let item of carouselContent.children) {
             if (item.getClientRects()[0].left > -1500) {
