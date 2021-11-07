@@ -310,6 +310,59 @@ h3.custom-quote {
 
 .testimonial-logo {
 	position: absolute;
+	margin: 0 2rem;
+	padding: 0 2rem;
+	opacity: 0.3;
+}
+
+.compare-plans {
+	margin: 1rem;
+	padding: 0.75rem 1.5rem;
+	color: #014751;
+	border: 2px solid #014751;
+	font-size: 1.05rem;
+	border-radius: 0.6rem;
+	font-weight: 700;
+}
+
+.compare-plans:hover {
+	background-color: #01465138;
+}
+
+/* SECTION: TESTIMONIALS */
+
+.testimonials {
+	margin: 5rem 0;
+}
+
+.testimony-head {
+	font-size: 1.5rem;
+	max-width: 70vw;
+	margin: auto;
+	color: #014751;
+	font-weight: 900;
+	padding: 2rem 0;
+}
+
+.testimony-tagline {
+	max-width: 80vw;
+	margin: auto;
+	line-height: 1.5;
+	font-size: 1rem;
+}
+
+.testimonial-carousel {
+	position: relative;
+	padding: 5rem 0;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-size: 1.5rem;
+	overflow: hidden;
+}
+
+.testimonial-logo {
+	position: absolute;
 	padding: 0 2rem;
 	opacity: 0.3;
 	width: 250px;
