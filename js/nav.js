@@ -30,10 +30,13 @@ document.body.prepend(navMenuItems);
 
 const createMenu = (target, menuItems) => {
     menuItems.forEach(item => {
+        const navItem = document.createElement('div');
+        navItem.classList.add('nav-item-container');
         const menuItem = document.createElement('a');
         menuItem.setAttribute('href', '#');
+        menuItem.classList.add('nav-link');
         if (item.extras.length > 0) {
-            menuItem.innerHTML = `<span>${item.name}</span><i class="fas fa-chevron-down"></i>`;
+            menuItem.innerHTML = `${item.name} <i class="fas fa-chevron-down"></i>`;
         }   else {
             menuItem.innerText = item.name;
         }
@@ -41,7 +44,8 @@ const createMenu = (target, menuItems) => {
         if (item.important === true) {
             menuItem.classList.add('main-link');
         }
-        target.append(menuItem);
+        navItem.append(menuItem);
+        target.append(navItem);
     });
 };
 
@@ -54,36 +58,62 @@ createMenu(navMenuItems, pageCategories);
 hamburgerMenu.addEventListener('click', function () {
     showMenu(this, navMenuItems)
 });
-hamburgerMenu.addEventListener('blur', function () {
-    hideMenu(this, navMenuItems)
-});
-
 
 const showMenu = (target, items) => {
     if (window.innerWidth < 765) {
-        target.classList.toggle('hideMenu');
         target.classList.toggle('showMenu');
-        items.classList.toggle('hideItems');
         items.classList.toggle('showItems');
         sections.forEach(section => {
             section.classList.toggle('menuOpen')
-            section.classList.toggle('menuClosed')
         });
     }   
 };
 
 const hideMenu = (target, items) => {
     if (window.innerWidth < 765) {
-        target.classList.add('hideMenu');
         target.classList.remove('showMenu');
-        items.classList.add('hideItems');
         items.classList.remove('showItems');
         sections.forEach(section => {
             section.classList.remove('menuOpen')
-            section.classList.add('menuClosed')
         });
     }   
 };
+
+
+// Add Extras to nav menu Items
+const navLinks = document.querySelectorAll('.nav-link');
+const navItemContainer = document.querySelectorAll('.nav-item-container');
+
+
+for (let i = 0; i < navItemContainer.length; i++) {
+    let navSubLinksContainer;
+    if (pageCategories[i].extras.length > 0) {
+        if(navLinks[i].id === pageCategories[i].name) {
+            navSubLinksContainer = document.createElement('div');
+            navSubLinksContainer.classList.add('sub-link-container');
+            for (let subCategory of pageCategories[i].extras) {
+                const navSubLink = document.createElement('a');
+                navSubLink.setAttribute('href', '#');
+                navSubLink.classList.add('nav-sub-link');
+                navSubLink.innerHTML = `${subCategory.icon} <span>${subCategory.name}</span>`;
+                navSubLinksContainer.append(navSubLink);
+            }
+        }
+        navItemContainer[i].append(navSubLinksContainer);
+    }
+
+}
+
+
+const navSubLinkContainer = document.querySelectorAll('.sub-link-container');
+for (let i = 0; i < navLinks.length; i++) {
+    if (navSubLinkContainer[i]) {
+        navLinks[i].addEventListener('click', () => {
+            navLinks[i].classList.toggle('active');
+            navSubLinkContainer[i].classList.toggle('show-sub-links');
+        })
+    }
+}
 
 // Remove Hamburger Menu classes on larger devices
 

@@ -14,15 +14,12 @@ planTypes.forEach(type => {
 
 // Plan BG animation
 const planBgOverlay = document.querySelector('.background-overlay')
-planBgOverlay.classList.add('left');
 const planButtons = document.querySelectorAll('.plan-type');
 planButtons.forEach(button => {
     button.addEventListener('click', function () {
         if (this === planButtons[0]) {
             planBgOverlay.classList.remove('right')
-            planBgOverlay.classList.add('left')
         }   else {
-            planBgOverlay.classList.remove('left')
             planBgOverlay.classList.add('right')
         }
     });
@@ -45,7 +42,6 @@ const subscriptionOptions = document.querySelectorAll('.toggle-option');
 subscriptionOptions.forEach((option, index) => option.innerText = subscriptionTypes[index]);
 
 subscriptionToggler.addEventListener('click', function() {
-    this.classList.toggle('left');
     this.classList.toggle('right');
     pricingMode();
 });
@@ -172,7 +168,6 @@ if (window.innerWidth < 765) {
 
 // Load Cards on scroll
 window.addEventListener('scroll', (e) => {
-    console.log(e);
     for (let card of planCards) {
         let getPosition = window.innerHeight - card.getClientRects()[0].top;
         if (getPosition > 50) {
@@ -183,3 +178,46 @@ window.addEventListener('scroll', (e) => {
         }
     }
 });
+
+
+// TESTIMONIALS:
+const testimonyHead = document.querySelector('.testimony-head');
+const testimonyTagline = document.querySelector('.testimony-tagline');
+const testimonialCarousel = document.querySelector('.testimonial-carousel');
+
+testimonyHead.innerText = testimoniesHeading;
+testimonyTagline.innerText = testimoniesTagline;
+
+const addCompanyTestimonials = (appendTo, companies) => {
+    for (let company of companies) {
+        const newLogo = document.createElement('img');
+        newLogo.setAttribute('src', `${company.logo}`);
+        newLogo.classList.add('testimonial-logo');
+        appendTo.append(newLogo);
+    }
+    createTestimonyCarousel(appendTo);
+}
+
+const createTestimonyCarousel = (carouselContent) => {
+    let transformX = 1500;
+    for (let item of carouselContent.children) {
+        item.style.transform = `translateX(${transformX}px)`;
+        transformX -= 350;
+    }
+    runTestimonyCarousel(carouselContent);
+}
+
+const runTestimonyCarousel = (carouselContent) => {
+    let transformX = 1;
+    const moveCarousel = setInterval(() => {
+        for (let item of carouselContent.children) {
+            if (item.getClientRects()[0].left > -1500) {
+                item.style.transform = `translateX(${(item.getClientRects()[0].left - transformX)}px)`;
+            }   else {
+                item.style.transform = `translateX(${650}px)`;
+            }
+        }
+    }, 10);
+}
+
+addCompanyTestimonials(testimonialCarousel, testimonials);
