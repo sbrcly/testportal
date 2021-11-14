@@ -368,3 +368,53 @@ h3.custom-quote {
 	width: 250px;
 	height: 105px;
 }
+
+/* SECTION: FREQUENTLY ASKED QUESTIONS */
+
+.faq-head,
+.faq-foot {
+	font-size: 1.5rem;
+	margin: 1rem 2rem;
+	color: #014751;
+	font-weight: 900;
+	padding: 2rem 0;
+	text-align: left;
+}
+
+.faqs {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem 2rem;
+}
+
+.faq {
+	margin-bottom: 2rem;
+	text-align: left;
+}
+
+.faq h3 {
+	font-size: 1.25rem;
+	color: #014751;
+	font-weight: 700;
+	line-height: 1.5;
+	padding-bottom: 1rem;
+}
+
+.faq p {
+	line-height: 1.5;
+	opacity: 0;
+	display: none;
+	transition: all 0.3s;
+}
+
+.faq-foot {
+	text-align: center;
+	font-weight: 700;
+	margin: 1rem;
+}
+
+.faq.show-answer > p {
+	opacity: 1;
+	display: block;
+	transition: all 0.3s;
+}

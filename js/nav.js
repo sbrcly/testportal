@@ -117,17 +117,32 @@ for (let i = 0; i < navLinks.length; i++) {
 
 // Remove Hamburger Menu classes on larger devices
 
-if (window.innerWidth >= 765) {
-    hamburgerMenu.classList.remove('hideMenu');
-    hamburgerMenu.classList.remove('showMenu');
-    navMenuItems.classList.remove('hideItems');
-    navMenuItems.classList.remove('showItems');
-    sections.forEach(section => {
-        section.classList.remove('menuOpen')
-        section.classList.remove('menuClosed')
-    });
-    hamburgerMenu.remove();
+const toggleNavMenu = () => {
+    let hamburgerMenuPlaceHolder = hamburgerMenu;
     let navMenuItemsPlaceholder = navMenuItems;
-    navMenuItems.remove();
-    navMenu.append(navMenuItemsPlaceholder);
+    if (window.innerWidth >= 765) {
+        // hamburgerMenu.classList.remove('hideMenu');
+        hamburgerMenu.classList.remove('showMenu');
+        // navMenuItems.classList.remove('hideItems');
+        navMenuItems.classList.remove('showItems');
+        sections.forEach(section => {
+            section.classList.remove('menuOpen')
+            section.classList.remove('menuClosed')
+        });
+        hamburgerMenu.remove();
+        let navMenuItemsPlaceholder = navMenuItems;
+        navMenuItems.remove();
+        navMenu.append(navMenuItemsPlaceholder);
+    }   else {
+        sections.forEach(section => {
+            let hamburgerMenu = hamburgerMenuPlaceHolder;
+            let navMenuItems = navMenuItemsPlaceholder;
+            navMenu.append(hamburgerMenu);
+            document.body.prepend(navMenuItems);
+        });
+    }
 }
+toggleNavMenu();
+
+
+window.addEventListener('resize', toggleNavMenu);

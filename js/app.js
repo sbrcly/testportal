@@ -228,3 +228,32 @@ const faqHead = document.querySelector('.faq-head');
 const faqFoot = document.querySelector('.faq-foot');
 const faqs = document.querySelector('.faqs');
 
+faqHead.innerText = faqHeading;
+faqFoot.innerText = faqFooter;
+
+const faqMain = (faQuestions, appendTo) => {
+    for (let question of faQuestions) {
+        const newFaq = document.createElement('div');
+        newFaq.classList.add('faq');
+        const newQuestion = document.createElement('h3');
+        newQuestion.innerText = question.question;
+        const newAnswer = document.createElement('p');
+        newAnswer.innerText = question.answer;
+        newFaq.append(newQuestion, newAnswer);
+        appendTo.append(newFaq);
+    }
+};
+faqMain(questions, faqs);
+
+const faqQuestions = document.querySelectorAll('.faq');
+
+const showAnswer = () => {
+    for (let question of faqQuestions) {
+        question.addEventListener('click', () => {
+            question.classList.toggle('show-answer');
+        })
+    }
+}
+
+showAnswer();
+
