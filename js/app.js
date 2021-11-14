@@ -215,7 +215,7 @@ const runTestimonyCarousel = (carouselContent) => {
             if (item.getClientRects()[0].left > -1500) {
                 item.style.transform = `translateX(${(item.getClientRects()[0].left - transformX)}px)`;
             }   else {
-                item.style.transform = `translateX(${650}px)`;
+                item.style.transform = `translateX(${600}px)`;
             }
         }
     }, 10);
