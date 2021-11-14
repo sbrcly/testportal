@@ -383,5 +383,9 @@ const testimonials = [
     {
         name: 'Techland',
         logo: '/projects/testportal/images/techland.jpg'
+    },
+    {
+        name: 'University of the West of Scotland',
+        logo: '/projects/testportal/images/uws.PNG'
     }
 ]

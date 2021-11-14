@@ -203,7 +203,7 @@ const createTestimonyCarousel = (carouselContent) => {
     let transformX = 1500;
     for (let item of carouselContent.children) {
         item.style.transform = `translateX(${transformX}px)`;
-        transformX -= 350;
+        transformX -= 300;
     }
     runTestimonyCarousel(carouselContent);
 }
