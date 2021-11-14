@@ -209,7 +209,7 @@ const createTestimonyCarousel = (carouselContent) => {
 }
 
 const runTestimonyCarousel = (carouselContent) => {
-    let transformX = 33;
+    let transformX = 32.25;
     const moveCarousel = setInterval(() => {
         for (let item of carouselContent.children) {
             if (item.getClientRects()[0].left > -1500) {
@@ -222,3 +222,9 @@ const runTestimonyCarousel = (carouselContent) => {
 }
 
 addCompanyTestimonials(testimonialCarousel, testimonials);
+
+// FAQ
+const faqHead = document.querySelector('.faq-head');
+const faqFoot = document.querySelector('.faq-foot');
+const faqs = document.querySelector('.faqs');
+

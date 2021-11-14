@@ -388,4 +388,28 @@ const testimonials = [
         name: 'University of the West of Scotland',
         logo: '/projects/testportal/images/uws.PNG'
     }
+];
+
+// Frequently asked Questions
+
+const faqHeading = 'Frequently asked questions';
+const faqFooter = 'Didn\'t find a fit solution? We can conduct a test for your organization.'
+
+const questions = [
+    {
+        question: 'What happens when the trial or subscription expires?',
+        answer: 'Your tests will be suspended but you still have an access to previously collected results.'
+    },
+    {
+        question: 'Can you organize the whole exam for me?',
+        answer: 'Yes, if you would like us to handle the examination process end-to-end we are more than happy to help.'
+    },
+    {
+        question: 'How many respondents may take the test simultaneously?',
+        answer: 'As many as needed. If you expect more than 1000 people to take the test at one time, write to us and make sure that the platform will work stably.'
+    },
+    {
+        question: 'Do you offer customization?',
+        answer: 'Yes. If you need custom features that are not available on our platform, just contact us and our custom development team will work with you.'
+    }
 ]
