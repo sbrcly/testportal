@@ -18,7 +18,7 @@ const planCardsContainer = document.querySelector('.plan-cards-container');
 const navMenuIcon = '<i class="fas fa-bars"></i>';
 const pageHeading = 'Pick your plan. Change whenever you want.';
 const companyLogo = {
-    image: '/images/companyLogo.PNG',
+    image: '/projects/testportal/images/companyLogo.PNG',
     alt: 'Company Logo'
 };
 const pageCategories = [
@@ -362,26 +362,26 @@ const testimoniesTagline = 'We helped these brands turn online assessments into 
 const testimonials = [
     {
         name: 'Schenker',
-        logo: '/images/schenker.jpg'
+        logo: '/projects/testportal/images/schenker.jpg'
     },
     {
         name: 'Electrolux',
-        logo: '/images/electrolux.png'
+        logo: '/projects/testportal/images/electrolux.png'
     },
     {
         name: 'DHL',
-        logo: '/images/dhl.jpg'
+        logo: '/projects/testportal/images/dhl.jpg'
     },
     {
         name: 'Broen',
-        logo: '/images/broen.jpg'
+        logo: '/projects/testportal/images/broen.jpg'
     },
     {
         name: 'Sega',
-        logo: '/images/sega.jpg'
+        logo: '/projects/testportal/images/sega.jpg'
     },
     {
         name: 'Techland',
-        logo: '/images/techland.jpg'
+        logo: '/projects/testportal/images/techland.jpg'
     }
 ]
