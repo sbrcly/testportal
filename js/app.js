@@ -203,19 +203,19 @@ const createTestimonyCarousel = (carouselContent) => {
     let transformX = 1500;
     for (let item of carouselContent.children) {
         item.style.transform = `translateX(${transformX}px)`;
-        transformX -= 300;
+        transformX -= 275;
     }
     runTestimonyCarousel(carouselContent);
 }
 
 const runTestimonyCarousel = (carouselContent) => {
-    let transformX = 32.25;
+    let transformX = 32.75;
     const moveCarousel = setInterval(() => {
         for (let item of carouselContent.children) {
             if (item.getClientRects()[0].left > -1500) {
                 item.style.transform = `translateX(${(item.getClientRects()[0].left - transformX)}px)`;
             }   else {
-                item.style.transform = `translateX(${600}px)`;
+                item.style.transform = `translateX(${425}px)`;
             }
         }
     }, 10);

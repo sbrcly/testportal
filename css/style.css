@@ -450,6 +450,11 @@ h3.custom-quote {
 	transition: all 0.3s;
 }
 
+.faq-foot {
+	width: 90%;
+	margin: auto;
+}
+
 .faq-btn {
 	width: 90%;
 	padding: 0.8rem 0;
