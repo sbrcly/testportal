@@ -412,4 +412,8 @@ const questions = [
         question: 'Do you offer customization?',
         answer: 'Yes. If you need custom features that are not available on our platform, just contact us and our custom development team will work with you.'
     }
-]
+];
+
+// FREE TRIAL
+
+const freeTrialFeatures = ['Free 14-day trial', 'No card required'];

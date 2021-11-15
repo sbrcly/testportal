@@ -236,12 +236,12 @@ const faqMain = (faQuestions, appendTo) => {
         const newFaq = document.createElement('div');
         newFaq.classList.add('faq');
         const newQuestion = document.createElement('h3');
-        newQuestion.innerText = question.question;
+        newQuestion.innerHTML = `<span>${question.question}</span> <i class="fas fa-chevron-down"></i>`;
         const newAnswer = document.createElement('p');
         newAnswer.innerText = question.answer;
         newFaq.append(newQuestion, newAnswer);
         appendTo.append(newFaq);
-    }
+    };
 };
 faqMain(questions, faqs);
 
@@ -250,10 +250,25 @@ const faqQuestions = document.querySelectorAll('.faq');
 const showAnswer = () => {
     for (let question of faqQuestions) {
         question.addEventListener('click', () => {
+            for (let question of faqQuestions) {
+                question.classList.remove('show-answer');
+            };
             question.classList.toggle('show-answer');
-        })
-    }
-}
-
+        });
+    };
+};
 showAnswer();
 
+// FREE TRIAL
+
+const freeTrialBox = document.querySelector('.free-trial');
+
+const addFreeTrialFeatures = (features, appendTo) => {
+    for (let i = 0; i < features.length; i++) {
+        const newFeature = document.createElement('div');
+        newFeature.classList.add('trial-feature');
+        newFeature.innerHTML = `<i class="fas fa-check"></i> <h4>${features[i]}</h4>`;
+        appendTo.append(newFeature);
+    };
+};
+addFreeTrialFeatures(freeTrialFeatures, freeTrialBox);
