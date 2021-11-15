@@ -276,45 +276,6 @@ h3.custom-quote {
 	background-color: #01465138;
 }
 
-/* SECTION: TESTIMONIALS */
-
-.testimonials {
-	margin: 5rem 0;
-}
-
-.testimony-head {
-	font-size: 1.5rem;
-	max-width: 70vw;
-	margin: auto;
-	color: #014751;
-	font-weight: 900;
-	padding: 2rem 0;
-}
-
-.testimony-tagline {
-	max-width: 80vw;
-	margin: auto;
-	line-height: 1.5;
-	font-size: 1rem;
-}
-
-.testimonial-carousel {
-	position: relative;
-	padding: 5rem 0;
-	display: flex;
-	align-items: center;
-	text-align: center;
-	font-size: 1.5rem;
-	overflow: hidden;
-}
-
-.testimonial-logo {
-	position: absolute;
-	margin: 0 2rem;
-	padding: 0 2rem;
-	opacity: 0.3;
-}
-
 .compare-plans {
 	margin: 1rem;
 	padding: 0.75rem 1.5rem;
@@ -337,7 +298,7 @@ h3.custom-quote {
 
 .testimony-head {
 	font-size: 1.5rem;
-	max-width: 70vw;
+	max-width: 85vw;
 	margin: auto;
 	color: #014751;
 	font-weight: 900;
@@ -345,7 +306,7 @@ h3.custom-quote {
 }
 
 .testimony-tagline {
-	max-width: 80vw;
+	max-width: 90vw;
 	margin: auto;
 	line-height: 1.5;
 	font-size: 1rem;
@@ -364,6 +325,7 @@ h3.custom-quote {
 .testimonial-logo {
 	position: absolute;
 	padding: 0 2rem;
+	margin: 0 2rem;
 	opacity: 0.3;
 	width: 250px;
 	height: 105px;
@@ -394,9 +356,10 @@ h3.custom-quote {
 .faq {
 	text-align: left;
 	background-color: #fff;
-	padding: 0.5rem;
+	padding: 1.5rem 1rem;
 	display: flex;
 	flex-direction: column;
+	border-radius: 0.6rem;
 }
 
 .faq h3 {
@@ -520,4 +483,39 @@ h3.custom-quote {
 .trial-feature h4 {
 	font-weight: 300;
 	font-size: 0.9rem;
+}
+
+/* FOOTER HEAD */
+.footer-head {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 5rem;
+}
+.footer-head-nav {
+	display: flex;
+	justify-content: space-between;
+	margin: 5rem 1rem 1rem 1rem;
+}
+.footer-head-left img {
+	height: auto;
+	width: 125px;
+}
+
+.footer-head-right a {
+	font-size: 1.4rem;
+	margin-left: 1rem;
+	color: #000000;
+}
+
+.footer-head-links {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 2rem 1.5rem;
+}
+
+.footer-head-links a {
+	margin-bottom: 1.25rem;
+	color: #014751;
+	font-weight: 600;
+	font-size: 0.95rem;
 }

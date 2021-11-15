@@ -272,3 +272,27 @@ const addFreeTrialFeatures = (features, appendTo) => {
     };
 };
 addFreeTrialFeatures(freeTrialFeatures, freeTrialBox);
+
+// FOOTER HEADING
+
+const footerHeadingLeft = document.querySelector('.footer-head-left');
+const footerHeadingRight = document.querySelector('.footer-head-right');
+const footerHeadLinksContainer = document.querySelector('.footer-head-links');
+const footerLogo = document.querySelector('.footer-head-left img');
+footerLogo.setAttribute('src', companyLogo.image);
+footerLogo.setAttribute('alt', companyLogo.alt);
+
+const appendFooterHeadContent = (content, appendTo) => {
+    for (let item of content) {
+        const newItem = document.createElement('a');
+        if (item.icon) {
+            newItem.innerHTML = item.icon;
+        }   else {
+            newItem.innerHTML = item.name;
+        }
+        newItem.setAttribute('href', item.link);
+        appendTo.append(newItem);
+    }
+}
+appendFooterHeadContent(socialMedia, footerHeadingRight);
+appendFooterHeadContent(footerHeadLinks, footerHeadLinksContainer);

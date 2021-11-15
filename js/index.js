@@ -7,10 +7,13 @@ const mainSection = document.querySelector('main');
 const header = document.querySelector('header');
 const mainHeading = document.querySelector('h1');
 const testimonies = document.querySelector('.testimonials')
+const faqSection = document.querySelector('.faq-section');
+const freeTrialSection = document.querySelector('.free-trial');
+const footer = document.querySelector('footer');
 const planTypeContainer = document.querySelector('.plan-type-buttons');
 const subscriptionToggler = document.querySelector('.toggle-overlay');
 const toggleLabels = document.querySelectorAll('.subscription-toggle h3')
-const sections = [mainSection, header, testimonies];
+const sections = [mainSection, header, testimonies, faqSection, freeTrialSection, footer];
 const buttons = document.querySelectorAll('button');
 const planCardsContainer = document.querySelector('.plan-cards-container');
 
@@ -417,3 +420,47 @@ const questions = [
 // FREE TRIAL
 
 const freeTrialFeatures = ['Free 14-day trial', 'No card required'];
+
+// SOCIAL MEDIA
+
+const socialMedia = [
+    {
+        name: 'linkedin',
+        icon: '<i class="fab fa-linkedin"></i>',
+        link: 'http://www.linkedin.com'
+    },
+    {
+        name: 'facebook',
+        icon: '<i class="fab fa-facebook"></i>',
+        link: 'http://www.facebook.com'
+    }
+];
+
+// FOOTER LINKS
+
+const footerHeadLinks = [
+    {
+        name: 'Blog',
+        link: ''
+    },
+    {
+        name: 'Help Center',
+        link: ''
+    },
+    {
+        name: 'Customer Stories',
+        link: ''
+    },
+    {
+        name: 'About us',
+        link: ''
+    },
+    {
+        name: 'Contact us',
+        link: ''
+    }
+];
+
+
+
+
