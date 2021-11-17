@@ -519,3 +519,72 @@ h3.custom-quote {
 	font-weight: 600;
 	font-size: 0.95rem;
 }
+
+/* FOOTER MAIN */
+.footer-main {
+	width: 100vw;
+	margin-bottom: 3rem;
+}
+
+.footer-main-cat {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-main-cat h6 {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	font-size: 1rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: rgb(170, 170, 170);
+}
+
+.footer-sub-cats {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 1rem;
+	font-size: 1rem;
+	font-weight: 300;
+	color: #014751;
+	display: none;
+}
+
+.footer-main-cat.show-cats .footer-sub-cats {
+	display: flex;
+}
+
+.footer-main-cat h6 i {
+	transition: all 0.5s;
+}
+
+.footer-main-cat.show-cats h6 i {
+	transform: rotate(180deg);
+	transition: all 0.5s;
+}
+
+.footer-sub-cat {
+	text-align: left;
+	padding: 1rem 0;
+}
+
+/* FOOTER FOOT */
+.footer-foot {
+	margin-bottom: 1rem;
+}
+
+.footer-foot a,
+.footer-foot h6 {
+	display: block;
+	text-align: left;
+	padding: 1rem;
+	color: rgb(170, 170, 170);
+}
+
+.footer-foot h6 {
+	font-size: 0.9rem;
+	font-weight: 300;
+}

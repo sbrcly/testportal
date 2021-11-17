@@ -296,3 +296,49 @@ const appendFooterHeadContent = (content, appendTo) => {
 }
 appendFooterHeadContent(socialMedia, footerHeadingRight);
 appendFooterHeadContent(footerHeadLinks, footerHeadLinksContainer);
+
+// FOOTER MAIN
+
+const footerMain = document.querySelector('.footer-main');
+
+const createFooterCats = (categories, appendTo) => {
+    categories.forEach(category => {
+        if (category.name !== 'Login' && category.name !== 'Sign Up' && category.name !== 'Blog') {
+            const newCat = document.createElement('div');
+            newCat.classList.add('footer-main-cat');
+            const catTitle = document.createElement('h6');
+            catTitle.innerHTML = `<span>${category.name}</span> <i class="fas fa-chevron-down"></i>`;
+            newCat.append(catTitle);
+            createFooterSubCats(category, newCat);
+            appendTo.append(newCat);
+        }
+    });
+};
+
+const createFooterSubCats = (categories, appendTo) => {
+    const newSubCats = document.createElement('div');
+    newSubCats.classList.add('footer-sub-cats');
+    categories.extras.forEach(extra => {
+        const newSubCat = document.createElement('a');
+        newSubCat.classList.add('footer-sub-cat');
+        newSubCat.innerText = extra.name;
+        newSubCats.append(newSubCat);
+        appendTo.append(newSubCats);
+    });
+};
+
+createFooterCats(pageCategories, footerMain);
+
+const footerCats = document.querySelectorAll('.footer-main-cat');
+
+footerCats.forEach(cat => {
+    cat.addEventListener('click', () => {
+        for (let c of footerCats) {
+            c.classList.remove('show-cats');
+        }
+        cat.classList.toggle('show-cats');
+    });
+});
+
+// FOOTER FOOT
+
