@@ -207,18 +207,18 @@ const createTestimonyCarousel = (carouselContent) => {
     }
     runTestimonyCarousel(carouselContent);
 }
-
+console.log(window.innerWidth);
 const runTestimonyCarousel = (carouselContent) => {
-    let transformX = 32.75;
+    let transformX = 32.5;
     const moveCarousel = setInterval(() => {
         for (let item of carouselContent.children) {
-            if (item.getClientRects()[0].left > -1500) {
+            if (item.getClientRects()[0].left > -360) {
                 item.style.transform = `translateX(${(item.getClientRects()[0].left - transformX)}px)`;
             }   else {
-                item.style.transform = `translateX(${425}px)`;
+                item.style.transform = `translateX(${1537}px)`;
             }
         }
-    }, 10);
+    }, 5);
 }
 
 addCompanyTestimonials(testimonialCarousel, testimonials);
