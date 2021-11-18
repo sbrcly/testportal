@@ -127,6 +127,13 @@ p {
 
 /* Plan Cards */
 
+.plan-cards-container {
+	width: 100vw;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 .plan-card {
 	position: relative;
 	margin: 3rem 0.5rem;
@@ -426,6 +433,7 @@ h3.custom-quote {
 	color: #014751;
 	border: 2px solid #64db9b;
 	border-radius: 0.6rem;
+	width: 200px;
 }
 
 /* FREE TRIAL */

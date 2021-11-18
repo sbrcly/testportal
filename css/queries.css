@@ -1,91 +1,77 @@
-@media (min-width: 540px) {
-	h1 {
-		max-width: 80vw;
-		margin: 10vh auto 0 auto;
+@media (min-width: 768px) {
+	p {
+		font-size: 1rem;
 	}
-}
-
-@media (min-width: 765px) {
-	h1 {
-		font-size: 3rem;
+	nav img {
+		width: 200px;
+		height: auto;
+		margin-left: 2rem;
 	}
-	nav,
-	header,
-	main {
-		padding: 1.5rem;
+	nav button {
+		margin-right: 2rem;
 	}
-
-	.nav-menu {
-		flex-direction: row;
+	nav button i {
+		font-size: 1.5rem;
 	}
-
-	#nav-menu-items {
-		flex-direction: row;
-		position: relative;
-		top: 0;
-		right: 0;
-		font-size: 0.75rem;
-		text-align: center;
-		background-color: #fff;
-		transform: translateX(0vw);
-		box-shadow: none;
-		border-radius: 0;
-	}
-
 	#nav-menu-items a {
-		padding: 0.5rem;
-		margin: 0.5rem;
-		border-radius: 0.4rem;
+		font-size: 1.2rem;
+		font-weight: 500;
+		padding: 1.5rem 1rem;
 	}
-
-	#nav-menu-items a:last-of-type {
-		border-radius: 0.4rem;
+	#nav-menu-items a.main-link {
+		font-weight: 700;
 	}
-
-	.plan-cards-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+	h1 {
+		font-size: 2.75rem;
+		max-width: 62vw;
 	}
 	.plan-card {
-		width: 40vw;
+		width: 42vw;
 	}
-
-	.plan-card h2 {
-		height: 60px;
+	.testimony-head {
+		font-size: 2rem;
 	}
-
-	.plan-card h3 {
-		height: 72px;
-		padding: 1.5rem 0 0 0;
+	.faq-head {
+		font-size: 2rem;
 	}
-
-	h3.custom-quote {
-		padding: 1.5rem 0 0 0;
+	.faq {
+		padding: 2.5rem 1rem;
 	}
-
-	.plan-card p {
-		height: 76px;
+	.faq p {
+		max-width: 90%;
 	}
-}
-
-@media (min-width: 1500px) {
-	#nav-menu-items {
-		font-size: 1.05rem;
+	.faq-foot {
+		font-size: 2rem;
 	}
-	.plan-cards-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+	.free-trial {
+		width: 80vw;
+		padding: 3rem;
 	}
-	.plan-card {
-		width: 20vw;
-		max-width: 400px;
-		margin: 0 2vw;
+	.free-trial h2 {
+		font-size: 2.5rem;
 	}
-
-	.free-trial-btn:hover {
-		opacity: 0.6;
-		transition: all 0.4s;
+	.free-trial button {
+		width: 200px;
+		margin-bottom: 3rem;
+	}
+	.footer-head-left img {
+		height: auto;
+		width: 200px;
+	}
+	.footer-head-right a {
+		margin: 0 2rem 0 0;
+		font-size: 2rem;
+	}
+	.footer-head-links {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+	.footer-head-links a {
+		font-size: 1rem;
+	}
+	.footer-main,
+	.footer-foot {
+		width: 90vw;
+		margin: auto;
 	}
 }

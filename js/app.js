@@ -155,7 +155,7 @@ planInfo.forEach(plan => {
 });
 const planCards = document.querySelectorAll('.plan-card');
 
-if (window.innerWidth < 765) {
+if (window.innerWidth < 768) {
     planCards[0].classList.add('show-card');
 }   else if (window.innerWidth < 1500) {
     planCards[0].classList.add('show-card');
@@ -188,6 +188,8 @@ const testimonialCarousel = document.querySelector('.testimonial-carousel');
 testimonyHead.innerText = testimoniesHeading;
 testimonyTagline.innerText = testimoniesTagline;
 
+console.log(window.innerWidth);
+
 const addCompanyTestimonials = (appendTo, companies) => {
     for (let company of companies) {
         const newLogo = document.createElement('img');
@@ -207,7 +209,7 @@ const createTestimonyCarousel = (carouselContent) => {
     }
     runTestimonyCarousel(carouselContent);
 }
-console.log(window.innerWidth);
+
 const runTestimonyCarousel = (carouselContent) => {
     let transformX = 32.5;
     const moveCarousel = setInterval(() => {

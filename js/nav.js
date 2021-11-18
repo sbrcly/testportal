@@ -60,7 +60,7 @@ hamburgerMenu.addEventListener('click', function () {
 });
 
 const showMenu = (target, items) => {
-    if (window.innerWidth < 765) {
+    if (window.innerWidth < 1200) {
         target.classList.toggle('showMenu');
         items.classList.toggle('showItems');
         sections.forEach(section => {
@@ -70,7 +70,7 @@ const showMenu = (target, items) => {
 };
 
 const hideMenu = (target, items) => {
-    if (window.innerWidth < 765) {
+    if (window.innerWidth < 1200) {
         target.classList.remove('showMenu');
         items.classList.remove('showItems');
         sections.forEach(section => {
@@ -120,11 +120,11 @@ for (let i = 0; i < navLinks.length; i++) {
 const toggleNavMenu = () => {
     let hamburgerMenuPlaceHolder = hamburgerMenu;
     let navMenuItemsPlaceholder = navMenuItems;
-    if (window.innerWidth >= 765) {
-        // hamburgerMenu.classList.remove('hideMenu');
-        hamburgerMenu.classList.remove('showMenu');
-        // navMenuItems.classList.remove('hideItems');
-        navMenuItems.classList.remove('showItems');
+    if (window.innerWidth >= 1200) {
+        hamburgerMenu.classList.add('showMenu');
+        navMenuItems.classList.add('showItems');
+        navMenuItems.classList.remove('hideItems');
+        navbar.classList.remove('menuClosed');
         sections.forEach(section => {
             section.classList.remove('menuOpen')
             section.classList.remove('menuClosed')
