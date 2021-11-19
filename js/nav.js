@@ -108,10 +108,43 @@ for (let i = 0; i < navItemContainer.length; i++) {
 const navSubLinkContainer = document.querySelectorAll('.sub-link-container');
 for (let i = 0; i < navLinks.length; i++) {
     if (navSubLinkContainer[i]) {
-        navLinks[i].addEventListener('click', () => {
-            navLinks[i].classList.toggle('active');
-            navSubLinkContainer[i].classList.toggle('show-sub-links');
-        })
+        if (window.innerWidth < 1200) {
+            navLinks[i].addEventListener('click', () => {
+                for (let j = 0; j < navLinks.length; j++) {
+                    if (navSubLinkContainer[j]) {
+                        if (j !== i) {
+                            navLinks[j].classList.remove('active');
+                            navSubLinkContainer[j].classList.remove('show-sub-links');
+                        };
+                    };
+                };
+                navLinks[i].classList.toggle('active');
+                navSubLinkContainer[i].classList.toggle('show-sub-links');
+            });
+        }   else {
+            navLinks[i].addEventListener('mouseover', () => {
+                for (let j = 0; j < navLinks.length; j++) {
+                    if (navSubLinkContainer[j]) {
+                        if (j !== i) {
+                            navLinks[j].classList.remove('active');
+                            navSubLinkContainer[j].classList.remove('show-sub-links');
+                        };
+                    };
+                };
+                navLinks[i].classList.toggle('active');
+                navSubLinkContainer[i].classList.toggle('show-sub-links');
+
+                navSubLinkContainer[i].addEventListener('mouseleave', () => {
+                    for (let j = 0; j < navLinks.length; j++) {
+                        if (navSubLinkContainer[j]) {
+                            navLinks[j].classList.remove('active');
+                            navSubLinkContainer[j].classList.remove('show-sub-links');
+                        };
+                    };
+                })
+            });
+        }
+        
     }
 }
 
@@ -121,8 +154,8 @@ const toggleNavMenu = () => {
     let hamburgerMenuPlaceHolder = hamburgerMenu;
     let navMenuItemsPlaceholder = navMenuItems;
     if (window.innerWidth >= 1200) {
-        hamburgerMenu.classList.add('showMenu');
-        navMenuItems.classList.add('showItems');
+        hamburgerMenu.classList.remove('showMenu');
+        navMenuItems.classList.remove('showItems');
         navMenuItems.classList.remove('hideItems');
         navbar.classList.remove('menuClosed');
         sections.forEach(section => {

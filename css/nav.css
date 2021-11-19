@@ -89,8 +89,6 @@ nav button.showMenu {
 }
 
 #nav-menu-items.showItems {
-	/* display: flex;
-	flex-direction: column; */
 	transform: translateX(0vw);
 	transition: all 0.4s;
 }
