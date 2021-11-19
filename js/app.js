@@ -56,6 +56,9 @@ const createCard = (cardInfo) => {
     planCard.classList.add('plan-card');
     planCard.classList.add('annually');
 
+    const cardHead = document.createElement('div');
+    cardHead.classList.add('card-head');
+
     const cardHeading = document.createElement('h2');
     cardHeading.classList.add('card-heading');
     cardHeading.innerText = header;
@@ -96,8 +99,8 @@ const createCard = (cardInfo) => {
     const freeTrialBtn = document.createElement('button');
     freeTrialBtn.classList.add('free-trial-btn');
     freeTrialBtn.innerText = 'Test 14 days for free';
-
-    planCard.append(cardHeading, cardDescription, cardMonthlyPrice, cardAnnualPrice, freeTrialBtn);
+    cardHead.append(cardHeading, cardDescription, cardMonthlyPrice, cardAnnualPrice, freeTrialBtn)
+    planCard.append(cardHead);
     addCardExtras(cardInfo, planCard);
 
     planCardsContainer.append(planCard);
@@ -157,7 +160,7 @@ const planCards = document.querySelectorAll('.plan-card');
 
 if (window.innerWidth < 768) {
     planCards[0].classList.add('show-card');
-}   else if (window.innerWidth < 1500) {
+}   else if (window.innerWidth < 1200) {
     planCards[0].classList.add('show-card');
     planCards[1].classList.add('show-card');
 }   else {
@@ -211,7 +214,7 @@ const createTestimonyCarousel = (carouselContent) => {
 }
 
 const runTestimonyCarousel = (carouselContent) => {
-    let transformX = 32.5;
+    let transformX = 32.2;
     const moveCarousel = setInterval(() => {
         for (let item of carouselContent.children) {
             if (item.getClientRects()[0].left > -360) {

@@ -115,12 +115,14 @@
 		top: 100%;
 		left: 0;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: wrap;
 		align-items: flex-start;
 		overflow-y: visible;
 		background-color: #fff;
-		width: 310px;
+		width: 700px;
 		text-align: left;
+		padding: 1rem;
 		opacity: 0;
 		border-radius: 0.6rem;
 		box-shadow: 0 7px 10px #00000033;
@@ -138,7 +140,7 @@
 		align-self: flex-start;
 		padding: 0.5rem 0;
 		font-weight: 400;
-		width: 100%;
+		width: 50%;
 		opacity: 0;
 		font-size: 0.9rem;
 		font-weight: 400;
@@ -154,5 +156,43 @@
 
 	#nav-menu-items .sub-link-container .nav-sub-link {
 		display: none;
+	}
+
+	h1 {
+		margin: 20vh auto 0 auto;
+		font-size: 3rem;
+		max-width: 800px;
+	}
+
+	.subscriptions {
+		margin: 5rem 0 2rem 0;
+	}
+
+	.plan-card {
+		width: 22vw;
+	}
+
+	.testimony-head {
+		font-size: 2.5rem;
+		font-weight: 600;
+	}
+
+	.testimony-tagline {
+		font-size: 1.2rem;
+		max-width: 700px;
+	}
+
+	.testimonial-carousel {
+		padding: 8rem 0;
+	}
+
+	.faq-section {
+		margin-bottom: 10rem;
+	}
+
+	.faq-foot {
+		margin-top: 8rem;
+		font-size: 2.25rem;
+		max-width: 800px;
 	}
 }

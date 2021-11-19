@@ -223,7 +223,7 @@ const planInfo = [
     {
         header: 'Standard',
         recommended: false,
-        description: 'Ideal for low-volume testing where no advanced results analytics is needed',
+        description: 'All bare essentials for low-volume testing with limited results analysis.',
         monthly: 35,
         annual: 29,
         limit: 30,
@@ -257,7 +257,7 @@ const planInfo = [
     {
         header: 'Pro',
         recommended: true,
-        description: 'Fits to most use cases with limited results collected per month',
+        description: 'Perfect for most users. Test more with powerful analytics but limited results per month.',
         monthly: 69,
         annual: 59,
         limit: 500,
@@ -291,7 +291,7 @@ const planInfo = [
     {
         header: 'Max',
         recommended: false,
-        description: 'Unlimited features and no Max number of results per month',
+        description: 'Full remote assessments potential unleashed. Test even more with generous monthly results limit.',
         monthly: 119,
         annual: 99,
         limit: 3000,
@@ -325,7 +325,7 @@ const planInfo = [
     {
         header: 'Max Enterprise',
         recommended: false,
-        description: 'Collaboration and additional user accounts, unlimited features and results collected, customization',
+        description: 'The ultimate business plan. Utilise all features, additional users and collaboration options.',
         monthly: 'Custom quote',
         annual: 'Custom quote',
         limit: 'Unlimited',

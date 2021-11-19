@@ -104,7 +104,6 @@ p {
 
 .toggle-overlay {
 	padding: 0.65rem;
-	/* margin: 0.2rem 1.75rem 0.2rem 0.2rem; */
 	border-radius: 50%;
 	background-color: #fff;
 }
@@ -144,6 +143,13 @@ p {
 	opacity: 0;
 	box-shadow: 0 0 2px rgba(100, 100, 100, 0.5);
 	transition: all 1s;
+}
+
+.card-head {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 42%;
 }
 
 .recommended-card {
